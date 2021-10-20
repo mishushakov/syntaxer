@@ -25,7 +25,7 @@ Multi-backend syntax highlighter for Crystal
 require "syntaxer"
 ```
 
-### `SourceHighlight`:
+### `Syntaxer::SourceHighlight`:
 
 #### Options
 
@@ -53,7 +53,7 @@ http://www.gnu.org/software/src-highlite -->
 
 <pre><tt><font color="#ffff60">print</font><font color="#C7C7C7"> </font><font color="#ffa0a0">'hello world'</font></tt></pre>
 
-### `Highlight`
+### `Syntaxer::Highlight`
 
 #### Options
 
