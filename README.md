@@ -26,14 +26,26 @@ require "syntaxer"
 
 with `SourceHighlight`:
 
-```crystal
-Syntaxer::SourceHighlight.highlight(code: "print 'hello world'", lang: "python")
-```
-
 options:
 
 ```crystal
 def self.highlight (code : String, lang : String, theme : String = "default.css", format : String = "html")
+```
+
+example:
+
+```crystal
+Syntaxer::SourceHighlight.highlight(code: "print 'hello world'", lang: "python")
+```
+
+output:
+
+```html
+<!-- Generator: GNU source-highlight 3.1.9
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><font color="#ffff60">print</font><font color="#C7C7C7"> </font><font color="#ffa0a0">'hello world'</font></tt></pre>
 ```
 
 ## Development
