@@ -19,6 +19,7 @@ Multi-backend syntax highlighter for Crystal
     - `SourceHighlight` requires [source-highlight](https://www.gnu.org/software/src-highlite)
     - `Highlight` requires [highlight](https://gitlab.com/saalen/highlight)
     - `Pygments` requires [pygments](https://pygments.org)
+    - `Syntect` requires [syntect-cli](https://github.com/mishushakov/syntect-cli)
 
 ## Usage
 
@@ -26,7 +27,7 @@ Multi-backend syntax highlighter for Crystal
 require "syntaxer"
 ```
 
-### `Syntaxer::SourceHighlight`:
+### `Syntaxer::SourceHighlight`
 
 #### Options
 
@@ -50,10 +51,6 @@ http://www.gnu.org/software/src-highlite -->
 <pre><tt><font color="#ffff60">print</font><font color="#C7C7C7"> </font><font color="#ffa0a0">'hello world'</font></tt></pre>
 ```
 
-**Preview**
-
-<pre><tt><font color="#ffff60">print</font><font color="#C7C7C7"> </font><font color="#ffa0a0">'hello world'</font></tt></pre>
-
 ### `Syntaxer::Highlight`
 
 #### Options
@@ -74,11 +71,6 @@ Syntaxer::Highlight.highlight(code: "print 'hello world'", lang: "python")
 <pre style="color:#f8f8f2; background-color:#272822; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#ae81ff; font-weight:bold">print</span> <span style="color:#a6e22e">&#39;hello world&#39;</span>
 </pre>
 ```
-
-**Preview**
-
-<pre style="color:#f8f8f2; background-color:#272822; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#ae81ff; font-weight:bold">print</span> <span style="color:#a6e22e">&#39;hello world&#39;</span>
-</pre>
 
 ### `Syntaxer::Pygments`
 
@@ -101,10 +93,26 @@ Syntaxer::Pygments.highlight(code: "print 'hello world'", lang: "python")
 </pre></div>
 ```
 
-**Preview**
+### `Syntaxer::Syntect`
 
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000">print</span> <span style="color: #BA2121">&#39;hello world&#39;</span>
-</pre></div>
+#### Options
+
+```crystal
+def self.highlight(code : String, lang : String, theme : String = "base16-ocean.dark")
+```
+
+#### Example
+
+```crystal
+Syntaxer::Syntect.highlight(code: "print 'hello world'", lang: "py")
+```
+
+**Output**
+
+```html
+<pre style="background-color:#2b303b;">
+<span style="color:#b48ead;">print </span><span style="color:#c0c5ce;">&#39;</span><span style="color:#a3be8c;">hello world</span><span style="color:#c0c5ce;">&#39;</span></pre>
+```
 
 ## Development
 

@@ -3,7 +3,7 @@
 # TODO: Infer language by filename
 # TODO: Lines highlighting
 module Syntaxer
-  VERSION = "0.1.0"
+  VERSION = "0.1.1"
 
   class SourceHighlight
     def self.highlight(code : String, lang : String, theme : String = "default.css", format : String = "html")
@@ -28,6 +28,15 @@ module Syntaxer
       input = IO::Memory.new code
       output = IO::Memory.new
       Process.run("pygmentize", ["-l", lang, "-O", "style=#{theme},noclasses=#{inline_style},nowrap=#{!wrap},#{params}", "-f", format], input: input, output: output)
+      output.to_s
+    end
+  end
+
+  class Syntect
+    def self.highlight(code : String, lang : String, theme : String = "base16-ocean.dark")
+      input = IO::Memory.new code
+      output = IO::Memory.new
+      Process.run("syntect-cli", ["--lang", lang, "--theme", theme], input: input, output: output)
       output.to_s
     end
   end
