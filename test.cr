@@ -1,3 +1,3 @@
 require "./src/syntaxer.cr"
 
-puts Syntaxer::Highlight.highlight(code: "print 'hello world'", lang: "python")
+puts Syntaxer::Pygments.highlight(code: "print 'hello world'", lang: "python", params: "linenos,lineanchors=kk,anchorlinenos")

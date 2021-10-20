@@ -18,6 +18,7 @@ Multi-backend syntax highlighter for Crystal
 3. Install highlighting backend(s)
     - `SourceHighlight` requires [source-highlight](https://www.gnu.org/software/src-highlite)
     - `Highlight` requires [highlight](https://gitlab.com/saalen/highlight)
+    - `Pygments` requires [pygments](https://pygments.org)
 
 ## Usage
 
@@ -58,7 +59,7 @@ http://www.gnu.org/software/src-highlite -->
 #### Options
 
 ```crystal
-def self.highlight(code : String, lang : String, theme : String = "base16/monokai", inline_style : Bool = true, format : String = "html", wrap_pre : Bool = true)
+def self.highlight(code : String, lang : String, theme : String = "base16/monokai", inline_style : Bool = true, format : String = "html", wrap : Bool = true)
 ```
 
 #### Example
@@ -78,6 +79,32 @@ Syntaxer::Highlight.highlight(code: "print 'hello world'", lang: "python")
 
 <pre style="color:#f8f8f2; background-color:#272822; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#ae81ff; font-weight:bold">print</span> <span style="color:#a6e22e">&#39;hello world&#39;</span>
 </pre>
+
+### `Syntaxer::Pygments`
+
+#### Options
+
+```crystal
+def self.highlight(code : String, lang : String, theme : String = "default", inline_style : Bool = true, format : String = "html", wrap : Bool = true, params : String = "")
+```
+
+#### Example
+
+```crystal
+Syntaxer::Pygments.highlight(code: "print 'hello world'", lang: "python")
+```
+
+**Output**
+
+```html
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000">print</span> <span style="color: #BA2121">&#39;hello world&#39;</span>
+</pre></div>
+```
+
+**Preview**
+
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%;"><span></span><span style="color: #008000">print</span> <span style="color: #BA2121">&#39;hello world&#39;</span>
+</pre></div>
 
 ## Development
 
