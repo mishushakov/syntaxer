@@ -1,0 +1,9 @@
+name: syntaxer
+version: 0.1.0
+
+authors:
+  - Mish Ushakov <mishushakov@users.noreply.github.com>
+
+crystal: 1.2.0
+
+license: MIT
