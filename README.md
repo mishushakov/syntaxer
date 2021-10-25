@@ -2,7 +2,9 @@
 
 Multi-backend syntax highlighter for Crystal
 
-![syntaxer Demo](demo.png)
+![syntaxer Demo](https://i.imgur.com/i7JhGwn.png)
+
+[Themes demo](https://mishushakov.github.io/syntaxer)
 
 ## Installation
 
