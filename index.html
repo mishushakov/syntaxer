@@ -1,0 +1,1169 @@
+<style>
+  body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  pre {
+    padding: 20px;
+    margin: 0;
+    border: 1px solid black;
+  }
+</style>
+
+<pre style="color:#585260; background-color:#efecf4; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#7e7887; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#955ae7; font-weight:bold">require</span> <span style="color:#2a9292">&quot;http/server&quot;</span>
+
+server <span style="color:#585260">=</span> HTTP<span style="color:#585260">::</span>Server<span style="color:#585260">.</span>new <span style="color:#955ae7; font-weight:bold">do</span> |context|
+  context<span style="color:#585260">.</span>response<span style="color:#585260">.</span>content_type <span style="color:#585260">=</span> <span style="color:#2a9292">&quot;text/plain&quot;</span>
+  context<span style="color:#585260">.</span>response<span style="color:#585260">.</span>print <span style="color:#2a9292">&quot;Hello world, got #{context.request.path}</span><span style="color:#585260">!</span><span style="color:#2a9292">&quot;</span>
+<span style="color:#2a9292">end</span>
+<span style="color:#2a9292"></span>
+<span style="color:#2a9292">puts &quot;</span>Listening on http<span style="color:#585260">://</span><span style="color:#aa573c">127.0.0.1</span><span style="color:#585260">:</span><span style="color:#aa573c">8080</span><span style="color:#2a9292">&quot;</span>
+<span style="color:#2a9292">server.listen(8080)</span>
+</pre>
+<pre style="color:#ab9bab; background-color:#1b181b; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#776977; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#7b59c0; font-weight:bold">require</span> <span style="color:#918b3b">&quot;http/server&quot;</span>
+
+server <span style="color:#ab9bab">=</span> HTTP<span style="color:#ab9bab">::</span>Server<span style="color:#ab9bab">.</span>new <span style="color:#7b59c0; font-weight:bold">do</span> |context|
+  context<span style="color:#ab9bab">.</span>response<span style="color:#ab9bab">.</span>content_type <span style="color:#ab9bab">=</span> <span style="color:#918b3b">&quot;text/plain&quot;</span>
+  context<span style="color:#ab9bab">.</span>response<span style="color:#ab9bab">.</span>print <span style="color:#918b3b">&quot;Hello world, got #{context.request.path}</span><span style="color:#ab9bab">!</span><span style="color:#918b3b">&quot;</span>
+<span style="color:#918b3b">end</span>
+<span style="color:#918b3b"></span>
+<span style="color:#918b3b">puts &quot;</span>Listening on http<span style="color:#ab9bab">://</span><span style="color:#a65926">127.0.0.1</span><span style="color:#ab9bab">:</span><span style="color:#a65926">8080</span><span style="color:#918b3b">&quot;</span>
+<span style="color:#918b3b">server.listen(8080)</span>
+</pre>
+<pre style="color:#d0d0d0; background-color:#151515; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#505050; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#aa759f; font-weight:bold">require</span> <span style="color:#90a959">&quot;http/server&quot;</span>
+
+server <span style="color:#d0d0d0">=</span> HTTP<span style="color:#d0d0d0">::</span>Server<span style="color:#d0d0d0">.</span>new <span style="color:#aa759f; font-weight:bold">do</span> |context|
+  context<span style="color:#d0d0d0">.</span>response<span style="color:#d0d0d0">.</span>content_type <span style="color:#d0d0d0">=</span> <span style="color:#90a959">&quot;text/plain&quot;</span>
+  context<span style="color:#d0d0d0">.</span>response<span style="color:#d0d0d0">.</span>print <span style="color:#90a959">&quot;Hello world, got #{context.request.path}</span><span style="color:#d0d0d0">!</span><span style="color:#90a959">&quot;</span>
+<span style="color:#90a959">end</span>
+<span style="color:#90a959"></span>
+<span style="color:#90a959">puts &quot;</span>Listening on http<span style="color:#d0d0d0">://</span><span style="color:#d28445">127.0.0.1</span><span style="color:#d0d0d0">:</span><span style="color:#d28445">8080</span><span style="color:#90a959">&quot;</span>
+<span style="color:#90a959">server.listen(8080)</span>
+</pre>
+<pre style="color:#b9b9b9; background-color:#101010; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#525252; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#747474; font-weight:bold">require</span> <span style="color:#8e8e8e">&quot;http/server&quot;</span>
+
+server <span style="color:#b9b9b9">=</span> HTTP<span style="color:#b9b9b9">::</span>Server<span style="color:#b9b9b9">.</span>new <span style="color:#747474; font-weight:bold">do</span> |context|
+  context<span style="color:#b9b9b9">.</span>response<span style="color:#b9b9b9">.</span>content_type <span style="color:#b9b9b9">=</span> <span style="color:#8e8e8e">&quot;text/plain&quot;</span>
+  context<span style="color:#b9b9b9">.</span>response<span style="color:#b9b9b9">.</span>print <span style="color:#8e8e8e">&quot;Hello world, got #{context.request.path}</span><span style="color:#b9b9b9">!</span><span style="color:#8e8e8e">&quot;</span>
+<span style="color:#8e8e8e">end</span>
+<span style="color:#8e8e8e"></span>
+<span style="color:#8e8e8e">puts &quot;</span>Listening on http<span style="color:#b9b9b9">://</span><span style="color:#999999">127.0.0.1</span><span style="color:#b9b9b9">:</span><span style="color:#999999">8080</span><span style="color:#8e8e8e">&quot;</span>
+<span style="color:#8e8e8e">server.listen(8080)</span>
+</pre>
+<pre style="color:#c5c8c6; background-color:#1d1f21; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#969896; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#b294bb; font-weight:bold">require</span> <span style="color:#b5bd68">&quot;http/server&quot;</span>
+
+server <span style="color:#c5c8c6">=</span> HTTP<span style="color:#c5c8c6">::</span>Server<span style="color:#c5c8c6">.</span>new <span style="color:#b294bb; font-weight:bold">do</span> |context|
+  context<span style="color:#c5c8c6">.</span>response<span style="color:#c5c8c6">.</span>content_type <span style="color:#c5c8c6">=</span> <span style="color:#b5bd68">&quot;text/plain&quot;</span>
+  context<span style="color:#c5c8c6">.</span>response<span style="color:#c5c8c6">.</span>print <span style="color:#b5bd68">&quot;Hello world, got #{context.request.path}</span><span style="color:#c5c8c6">!</span><span style="color:#b5bd68">&quot;</span>
+<span style="color:#b5bd68">end</span>
+<span style="color:#b5bd68"></span>
+<span style="color:#b5bd68">puts &quot;</span>Listening on http<span style="color:#c5c8c6">://</span><span style="color:#de935f">127.0.0.1</span><span style="color:#c5c8c6">:</span><span style="color:#de935f">8080</span><span style="color:#b5bd68">&quot;</span>
+<span style="color:#b5bd68">server.listen(8080)</span>
+</pre>
+<pre style="color:#d8d8d8; background-color:#181818; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#585858; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#ba8baf; font-weight:bold">require</span> <span style="color:#a1b56c">&quot;http/server&quot;</span>
+
+server <span style="color:#d8d8d8">=</span> HTTP<span style="color:#d8d8d8">::</span>Server<span style="color:#d8d8d8">.</span>new <span style="color:#ba8baf; font-weight:bold">do</span> |context|
+  context<span style="color:#d8d8d8">.</span>response<span style="color:#d8d8d8">.</span>content_type <span style="color:#d8d8d8">=</span> <span style="color:#a1b56c">&quot;text/plain&quot;</span>
+  context<span style="color:#d8d8d8">.</span>response<span style="color:#d8d8d8">.</span>print <span style="color:#a1b56c">&quot;Hello world, got #{context.request.path}</span><span style="color:#d8d8d8">!</span><span style="color:#a1b56c">&quot;</span>
+<span style="color:#a1b56c">end</span>
+<span style="color:#a1b56c"></span>
+<span style="color:#a1b56c">puts &quot;</span>Listening on http<span style="color:#d8d8d8">://</span><span style="color:#dc9656">127.0.0.1</span><span style="color:#d8d8d8">:</span><span style="color:#dc9656">8080</span><span style="color:#a1b56c">&quot;</span>
+<span style="color:#a1b56c">server.listen(8080)</span>
+</pre>
+<pre style="color:#d5c4a1; background-color:#282828; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#665c54; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#d3869b; font-weight:bold">require</span> <span style="color:#b8bb26">&quot;http/server&quot;</span>
+
+server <span style="color:#d5c4a1">=</span> HTTP<span style="color:#d5c4a1">::</span>Server<span style="color:#d5c4a1">.</span>new <span style="color:#d3869b; font-weight:bold">do</span> |context|
+  context<span style="color:#d5c4a1">.</span>response<span style="color:#d5c4a1">.</span>content_type <span style="color:#d5c4a1">=</span> <span style="color:#b8bb26">&quot;text/plain&quot;</span>
+  context<span style="color:#d5c4a1">.</span>response<span style="color:#d5c4a1">.</span>print <span style="color:#b8bb26">&quot;Hello world, got #{context.request.path}</span><span style="color:#d5c4a1">!</span><span style="color:#b8bb26">&quot;</span>
+<span style="color:#b8bb26">end</span>
+<span style="color:#b8bb26"></span>
+<span style="color:#b8bb26">puts &quot;</span>Listening on http<span style="color:#d5c4a1">://</span><span style="color:#fe8019">127.0.0.1</span><span style="color:#d5c4a1">:</span><span style="color:#fe8019">8080</span><span style="color:#b8bb26">&quot;</span>
+<span style="color:#b8bb26">server.listen(8080)</span>
+</pre>
+<pre style="color:#e0e0e0; background-color:#000000; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#b0b0b0; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#d381c3; font-weight:bold">require</span> <span style="color:#a1c659">&quot;http/server&quot;</span>
+
+server <span style="color:#e0e0e0">=</span> HTTP<span style="color:#e0e0e0">::</span>Server<span style="color:#e0e0e0">.</span>new <span style="color:#d381c3; font-weight:bold">do</span> |context|
+  context<span style="color:#e0e0e0">.</span>response<span style="color:#e0e0e0">.</span>content_type <span style="color:#e0e0e0">=</span> <span style="color:#a1c659">&quot;text/plain&quot;</span>
+  context<span style="color:#e0e0e0">.</span>response<span style="color:#e0e0e0">.</span>print <span style="color:#a1c659">&quot;Hello world, got #{context.request.path}</span><span style="color:#e0e0e0">!</span><span style="color:#a1c659">&quot;</span>
+<span style="color:#a1c659">end</span>
+<span style="color:#a1c659"></span>
+<span style="color:#a1c659">puts &quot;</span>Listening on http<span style="color:#e0e0e0">://</span><span style="color:#fc6d24">127.0.0.1</span><span style="color:#e0e0e0">:</span><span style="color:#fc6d24">8080</span><span style="color:#a1c659">&quot;</span>
+<span style="color:#a1c659">server.listen(8080)</span>
+</pre>
+<pre style="color:#c7ccd1; background-color:#1c2023; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#747c84; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#c795ae; font-weight:bold">require</span> <span style="color:#95c7ae">&quot;http/server&quot;</span>
+
+server <span style="color:#c7ccd1">=</span> HTTP<span style="color:#c7ccd1">::</span>Server<span style="color:#c7ccd1">.</span>new <span style="color:#c795ae; font-weight:bold">do</span> |context|
+  context<span style="color:#c7ccd1">.</span>response<span style="color:#c7ccd1">.</span>content_type <span style="color:#c7ccd1">=</span> <span style="color:#95c7ae">&quot;text/plain&quot;</span>
+  context<span style="color:#c7ccd1">.</span>response<span style="color:#c7ccd1">.</span>print <span style="color:#95c7ae">&quot;Hello world, got #{context.request.path}</span><span style="color:#c7ccd1">!</span><span style="color:#95c7ae">&quot;</span>
+<span style="color:#95c7ae">end</span>
+<span style="color:#95c7ae"></span>
+<span style="color:#95c7ae">puts &quot;</span>Listening on http<span style="color:#c7ccd1">://</span><span style="color:#c7c795">127.0.0.1</span><span style="color:#c7ccd1">:</span><span style="color:#c7c795">8080</span><span style="color:#95c7ae">&quot;</span>
+<span style="color:#95c7ae">server.listen(8080)</span>
+</pre>
+<pre style="color:#a8a19f; background-color:#1b1918; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#766e6b; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#6666ea; font-weight:bold">require</span> <span style="color:#7b9726">&quot;http/server&quot;</span>
+
+server <span style="color:#a8a19f">=</span> HTTP<span style="color:#a8a19f">::</span>Server<span style="color:#a8a19f">.</span>new <span style="color:#6666ea; font-weight:bold">do</span> |context|
+  context<span style="color:#a8a19f">.</span>response<span style="color:#a8a19f">.</span>content_type <span style="color:#a8a19f">=</span> <span style="color:#7b9726">&quot;text/plain&quot;</span>
+  context<span style="color:#a8a19f">.</span>response<span style="color:#a8a19f">.</span>print <span style="color:#7b9726">&quot;Hello world, got #{context.request.path}</span><span style="color:#a8a19f">!</span><span style="color:#7b9726">&quot;</span>
+<span style="color:#7b9726">end</span>
+<span style="color:#7b9726"></span>
+<span style="color:#7b9726">puts &quot;</span>Listening on http<span style="color:#a8a19f">://</span><span style="color:#df5320">127.0.0.1</span><span style="color:#a8a19f">:</span><span style="color:#df5320">8080</span><span style="color:#7b9726">&quot;</span>
+<span style="color:#7b9726">server.listen(8080)</span>
+</pre>
+<pre style="color:#d0d0fa; background-color:#00002a; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#50507a; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#f10596; font-weight:bold">require</span> <span style="color:#59f176">&quot;http/server&quot;</span>
+
+server <span style="color:#d0d0fa">=</span> HTTP<span style="color:#d0d0fa">::</span>Server<span style="color:#d0d0fa">.</span>new <span style="color:#f10596; font-weight:bold">do</span> |context|
+  context<span style="color:#d0d0fa">.</span>response<span style="color:#d0d0fa">.</span>content_type <span style="color:#d0d0fa">=</span> <span style="color:#59f176">&quot;text/plain&quot;</span>
+  context<span style="color:#d0d0fa">.</span>response<span style="color:#d0d0fa">.</span>print <span style="color:#59f176">&quot;Hello world, got #{context.request.path}</span><span style="color:#d0d0fa">!</span><span style="color:#59f176">&quot;</span>
+<span style="color:#59f176">end</span>
+<span style="color:#59f176"></span>
+<span style="color:#59f176">puts &quot;</span>Listening on http<span style="color:#d0d0fa">://</span><span style="color:#fc8d28">127.0.0.1</span><span style="color:#d0d0fa">:</span><span style="color:#fc8d28">8080</span><span style="color:#59f176">&quot;</span>
+<span style="color:#59f176">server.listen(8080)</span>
+</pre>
+<pre style="color:#e0e0e0; background-color:#2c3e50; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#95a5a6; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#9b59b6; font-weight:bold">require</span> <span style="color:#2ecc71">&quot;http/server&quot;</span>
+
+server <span style="color:#e0e0e0">=</span> HTTP<span style="color:#e0e0e0">::</span>Server<span style="color:#e0e0e0">.</span>new <span style="color:#9b59b6; font-weight:bold">do</span> |context|
+  context<span style="color:#e0e0e0">.</span>response<span style="color:#e0e0e0">.</span>content_type <span style="color:#e0e0e0">=</span> <span style="color:#2ecc71">&quot;text/plain&quot;</span>
+  context<span style="color:#e0e0e0">.</span>response<span style="color:#e0e0e0">.</span>print <span style="color:#2ecc71">&quot;Hello world, got #{context.request.path}</span><span style="color:#e0e0e0">!</span><span style="color:#2ecc71">&quot;</span>
+<span style="color:#2ecc71">end</span>
+<span style="color:#2ecc71"></span>
+<span style="color:#2ecc71">puts &quot;</span>Listening on http<span style="color:#e0e0e0">://</span><span style="color:#e67e22">127.0.0.1</span><span style="color:#e0e0e0">:</span><span style="color:#e67e22">8080</span><span style="color:#2ecc71">&quot;</span>
+<span style="color:#2ecc71">server.listen(8080)</span>
+</pre>
+<pre style="color:#8b8792; background-color:#19171c; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#655f6d; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#955ae7; font-weight:bold">require</span> <span style="color:#2a9292">&quot;http/server&quot;</span>
+
+server <span style="color:#8b8792">=</span> HTTP<span style="color:#8b8792">::</span>Server<span style="color:#8b8792">.</span>new <span style="color:#955ae7; font-weight:bold">do</span> |context|
+  context<span style="color:#8b8792">.</span>response<span style="color:#8b8792">.</span>content_type <span style="color:#8b8792">=</span> <span style="color:#2a9292">&quot;text/plain&quot;</span>
+  context<span style="color:#8b8792">.</span>response<span style="color:#8b8792">.</span>print <span style="color:#2a9292">&quot;Hello world, got #{context.request.path}</span><span style="color:#8b8792">!</span><span style="color:#2a9292">&quot;</span>
+<span style="color:#2a9292">end</span>
+<span style="color:#2a9292"></span>
+<span style="color:#2a9292">puts &quot;</span>Listening on http<span style="color:#8b8792">://</span><span style="color:#aa573c">127.0.0.1</span><span style="color:#8b8792">:</span><span style="color:#aa573c">8080</span><span style="color:#2a9292">&quot;</span>
+<span style="color:#2a9292">server.listen(8080)</span>
+</pre>
+<pre style="color:#cccccc; background-color:#1a1a1a; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#767676; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#b98eb2; font-weight:bold">require</span> <span style="color:#83a471">&quot;http/server&quot;</span>
+
+server <span style="color:#cccccc">=</span> HTTP<span style="color:#cccccc">::</span>Server<span style="color:#cccccc">.</span>new <span style="color:#b98eb2; font-weight:bold">do</span> |context|
+  context<span style="color:#cccccc">.</span>response<span style="color:#cccccc">.</span>content_type <span style="color:#cccccc">=</span> <span style="color:#83a471">&quot;text/plain&quot;</span>
+  context<span style="color:#cccccc">.</span>response<span style="color:#cccccc">.</span>print <span style="color:#83a471">&quot;Hello world, got #{context.request.path}</span><span style="color:#cccccc">!</span><span style="color:#83a471">&quot;</span>
+<span style="color:#83a471">end</span>
+<span style="color:#83a471"></span>
+<span style="color:#83a471">puts &quot;</span>Listening on http<span style="color:#cccccc">://</span><span style="color:#d86868">127.0.0.1</span><span style="color:#cccccc">:</span><span style="color:#d86868">8080</span><span style="color:#83a471">&quot;</span>
+<span style="color:#83a471">server.listen(8080)</span>
+</pre>
+<pre style="color:#93a1a1; background-color:#002b36; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#657b83; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#6c71c4; font-weight:bold">require</span> <span style="color:#859900">&quot;http/server&quot;</span>
+
+server <span style="color:#93a1a1">=</span> HTTP<span style="color:#93a1a1">::</span>Server<span style="color:#93a1a1">.</span>new <span style="color:#6c71c4; font-weight:bold">do</span> |context|
+  context<span style="color:#93a1a1">.</span>response<span style="color:#93a1a1">.</span>content_type <span style="color:#93a1a1">=</span> <span style="color:#859900">&quot;text/plain&quot;</span>
+  context<span style="color:#93a1a1">.</span>response<span style="color:#93a1a1">.</span>print <span style="color:#859900">&quot;Hello world, got #{context.request.path}</span><span style="color:#93a1a1">!</span><span style="color:#859900">&quot;</span>
+<span style="color:#859900">end</span>
+<span style="color:#859900"></span>
+<span style="color:#859900">puts &quot;</span>Listening on http<span style="color:#93a1a1">://</span><span style="color:#cb4b16">127.0.0.1</span><span style="color:#93a1a1">:</span><span style="color:#cb4b16">8080</span><span style="color:#859900">&quot;</span>
+<span style="color:#859900">server.listen(8080)</span>
+</pre>
+<pre style="color:#eeffff; background-color:#212121; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#4a4a4a; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#c792ea; font-weight:bold">require</span> <span style="color:#c3e88d">&quot;http/server&quot;</span>
+
+server <span style="color:#eeffff">=</span> HTTP<span style="color:#eeffff">::</span>Server<span style="color:#eeffff">.</span>new <span style="color:#c792ea; font-weight:bold">do</span> |context|
+  context<span style="color:#eeffff">.</span>response<span style="color:#eeffff">.</span>content_type <span style="color:#eeffff">=</span> <span style="color:#c3e88d">&quot;text/plain&quot;</span>
+  context<span style="color:#eeffff">.</span>response<span style="color:#eeffff">.</span>print <span style="color:#c3e88d">&quot;Hello world, got #{context.request.path}</span><span style="color:#eeffff">!</span><span style="color:#c3e88d">&quot;</span>
+<span style="color:#c3e88d">end</span>
+<span style="color:#c3e88d"></span>
+<span style="color:#c3e88d">puts &quot;</span>Listening on http<span style="color:#eeffff">://</span><span style="color:#f78c6c">127.0.0.1</span><span style="color:#eeffff">:</span><span style="color:#f78c6c">8080</span><span style="color:#c3e88d">&quot;</span>
+<span style="color:#c3e88d">server.listen(8080)</span>
+</pre>
+<pre style="color:#383838; background-color:#f8f8f8; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#b8b8b8; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#96609e; font-weight:bold">require</span> <span style="color:#538947">&quot;http/server&quot;</span>
+
+server <span style="color:#383838">=</span> HTTP<span style="color:#383838">::</span>Server<span style="color:#383838">.</span>new <span style="color:#96609e; font-weight:bold">do</span> |context|
+  context<span style="color:#383838">.</span>response<span style="color:#383838">.</span>content_type <span style="color:#383838">=</span> <span style="color:#538947">&quot;text/plain&quot;</span>
+  context<span style="color:#383838">.</span>response<span style="color:#383838">.</span>print <span style="color:#538947">&quot;Hello world, got #{context.request.path}</span><span style="color:#383838">!</span><span style="color:#538947">&quot;</span>
+<span style="color:#538947">end</span>
+<span style="color:#538947"></span>
+<span style="color:#538947">puts &quot;</span>Listening on http<span style="color:#383838">://</span><span style="color:#dc9656">127.0.0.1</span><span style="color:#383838">:</span><span style="color:#dc9656">8080</span><span style="color:#538947">&quot;</span>
+<span style="color:#538947">server.listen(8080)</span>
+</pre>
+<pre style="color:#586e75; background-color:#fdf6e3; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#839496; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#6c71c4; font-weight:bold">require</span> <span style="color:#859900">&quot;http/server&quot;</span>
+
+server <span style="color:#586e75">=</span> HTTP<span style="color:#586e75">::</span>Server<span style="color:#586e75">.</span>new <span style="color:#6c71c4; font-weight:bold">do</span> |context|
+  context<span style="color:#586e75">.</span>response<span style="color:#586e75">.</span>content_type <span style="color:#586e75">=</span> <span style="color:#859900">&quot;text/plain&quot;</span>
+  context<span style="color:#586e75">.</span>response<span style="color:#586e75">.</span>print <span style="color:#859900">&quot;Hello world, got #{context.request.path}</span><span style="color:#586e75">!</span><span style="color:#859900">&quot;</span>
+<span style="color:#859900">end</span>
+<span style="color:#859900"></span>
+<span style="color:#859900">puts &quot;</span>Listening on http<span style="color:#586e75">://</span><span style="color:#cb4b16">127.0.0.1</span><span style="color:#586e75">:</span><span style="color:#cb4b16">8080</span><span style="color:#859900">&quot;</span>
+<span style="color:#859900">server.listen(8080)</span>
+</pre>
+<pre style="color:#00bb00; background-color:#001100; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#007700; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#00bb00; font-weight:bold">require</span> <span style="color:#00bb00">&quot;http/server&quot;</span>
+
+server <span style="color:#00bb00">=</span> HTTP<span style="color:#00bb00">::</span>Server<span style="color:#00bb00">.</span>new <span style="color:#00bb00; font-weight:bold">do</span> |context|
+  context<span style="color:#00bb00">.</span>response<span style="color:#00bb00">.</span>content_type <span style="color:#00bb00">=</span> <span style="color:#00bb00">&quot;text/plain&quot;</span>
+  context<span style="color:#00bb00">.</span>response<span style="color:#00bb00">.</span>print <span style="color:#00bb00">&quot;Hello world, got #{context.request.path}</span><span style="color:#00bb00">!</span><span style="color:#00bb00">&quot;</span>
+<span style="color:#00bb00">end</span>
+<span style="color:#00bb00"></span>
+<span style="color:#00bb00">puts &quot;</span>Listening on http<span style="color:#00bb00">://</span><span style="color:#009900">127.0.0.1</span><span style="color:#00bb00">:</span><span style="color:#009900">8080</span><span style="color:#00bb00">&quot;</span>
+<span style="color:#00bb00">server.listen(8080)</span>
+</pre>
+<pre style="color:#e6e1dc; background-color:#2b2b2b; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#5a647e; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#b6b3eb; font-weight:bold">require</span> <span style="color:#a5c261">&quot;http/server&quot;</span>
+
+server <span style="color:#e6e1dc">=</span> HTTP<span style="color:#e6e1dc">::</span>Server<span style="color:#e6e1dc">.</span>new <span style="color:#b6b3eb; font-weight:bold">do</span> |context|
+  context<span style="color:#e6e1dc">.</span>response<span style="color:#e6e1dc">.</span>content_type <span style="color:#e6e1dc">=</span> <span style="color:#a5c261">&quot;text/plain&quot;</span>
+  context<span style="color:#e6e1dc">.</span>response<span style="color:#e6e1dc">.</span>print <span style="color:#a5c261">&quot;Hello world, got #{context.request.path}</span><span style="color:#e6e1dc">!</span><span style="color:#a5c261">&quot;</span>
+<span style="color:#a5c261">end</span>
+<span style="color:#a5c261"></span>
+<span style="color:#a5c261">puts &quot;</span>Listening on http<span style="color:#e6e1dc">://</span><span style="color:#cc7833">127.0.0.1</span><span style="color:#e6e1dc">:</span><span style="color:#cc7833">8080</span><span style="color:#a5c261">&quot;</span>
+<span style="color:#a5c261">server.listen(8080)</span>
+</pre>
+<pre style="color:#979db4; background-color:#202746; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#6b7394; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#6679cc; font-weight:bold">require</span> <span style="color:#ac9739">&quot;http/server&quot;</span>
+
+server <span style="color:#979db4">=</span> HTTP<span style="color:#979db4">::</span>Server<span style="color:#979db4">.</span>new <span style="color:#6679cc; font-weight:bold">do</span> |context|
+  context<span style="color:#979db4">.</span>response<span style="color:#979db4">.</span>content_type <span style="color:#979db4">=</span> <span style="color:#ac9739">&quot;text/plain&quot;</span>
+  context<span style="color:#979db4">.</span>response<span style="color:#979db4">.</span>print <span style="color:#ac9739">&quot;Hello world, got #{context.request.path}</span><span style="color:#979db4">!</span><span style="color:#ac9739">&quot;</span>
+<span style="color:#ac9739">end</span>
+<span style="color:#ac9739"></span>
+<span style="color:#ac9739">puts &quot;</span>Listening on http<span style="color:#979db4">://</span><span style="color:#c76b29">127.0.0.1</span><span style="color:#979db4">:</span><span style="color:#c76b29">8080</span><span style="color:#ac9739">&quot;</span>
+<span style="color:#ac9739">server.listen(8080)</span>
+</pre>
+<pre style="color:#d0d0d0; background-color:#000000; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#808080; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#cc00ff; font-weight:bold">require</span> <span style="color:#33ff00">&quot;http/server&quot;</span>
+
+server <span style="color:#d0d0d0">=</span> HTTP<span style="color:#d0d0d0">::</span>Server<span style="color:#d0d0d0">.</span>new <span style="color:#cc00ff; font-weight:bold">do</span> |context|
+  context<span style="color:#d0d0d0">.</span>response<span style="color:#d0d0d0">.</span>content_type <span style="color:#d0d0d0">=</span> <span style="color:#33ff00">&quot;text/plain&quot;</span>
+  context<span style="color:#d0d0d0">.</span>response<span style="color:#d0d0d0">.</span>print <span style="color:#33ff00">&quot;Hello world, got #{context.request.path}</span><span style="color:#d0d0d0">!</span><span style="color:#33ff00">&quot;</span>
+<span style="color:#33ff00">end</span>
+<span style="color:#33ff00"></span>
+<span style="color:#33ff00">puts &quot;</span>Listening on http<span style="color:#d0d0d0">://</span><span style="color:#ff9900">127.0.0.1</span><span style="color:#d0d0d0">:</span><span style="color:#ff9900">8080</span><span style="color:#33ff00">&quot;</span>
+<span style="color:#33ff00">server.listen(8080)</span>
+</pre>
+<pre style="color:#80cbc4; background-color:#fafafa; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#ccd7da; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#7c4dff; font-weight:bold">require</span> <span style="color:#91b859">&quot;http/server&quot;</span>
+
+server <span style="color:#80cbc4">=</span> HTTP<span style="color:#80cbc4">::</span>Server<span style="color:#80cbc4">.</span>new <span style="color:#7c4dff; font-weight:bold">do</span> |context|
+  context<span style="color:#80cbc4">.</span>response<span style="color:#80cbc4">.</span>content_type <span style="color:#80cbc4">=</span> <span style="color:#91b859">&quot;text/plain&quot;</span>
+  context<span style="color:#80cbc4">.</span>response<span style="color:#80cbc4">.</span>print <span style="color:#91b859">&quot;Hello world, got #{context.request.path}</span><span style="color:#80cbc4">!</span><span style="color:#91b859">&quot;</span>
+<span style="color:#91b859">end</span>
+<span style="color:#91b859"></span>
+<span style="color:#91b859">puts &quot;</span>Listening on http<span style="color:#80cbc4">://</span><span style="color:#f76d47">127.0.0.1</span><span style="color:#80cbc4">:</span><span style="color:#f76d47">8080</span><span style="color:#91b859">&quot;</span>
+<span style="color:#91b859">server.listen(8080)</span>
+</pre>
+<pre style="color:#d5c4a1; background-color:#1d2021; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#665c54; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#d3869b; font-weight:bold">require</span> <span style="color:#b8bb26">&quot;http/server&quot;</span>
+
+server <span style="color:#d5c4a1">=</span> HTTP<span style="color:#d5c4a1">::</span>Server<span style="color:#d5c4a1">.</span>new <span style="color:#d3869b; font-weight:bold">do</span> |context|
+  context<span style="color:#d5c4a1">.</span>response<span style="color:#d5c4a1">.</span>content_type <span style="color:#d5c4a1">=</span> <span style="color:#b8bb26">&quot;text/plain&quot;</span>
+  context<span style="color:#d5c4a1">.</span>response<span style="color:#d5c4a1">.</span>print <span style="color:#b8bb26">&quot;Hello world, got #{context.request.path}</span><span style="color:#d5c4a1">!</span><span style="color:#b8bb26">&quot;</span>
+<span style="color:#b8bb26">end</span>
+<span style="color:#b8bb26"></span>
+<span style="color:#b8bb26">puts &quot;</span>Listening on http<span style="color:#d5c4a1">://</span><span style="color:#fe8019">127.0.0.1</span><span style="color:#d5c4a1">:</span><span style="color:#fe8019">8080</span><span style="color:#b8bb26">&quot;</span>
+<span style="color:#b8bb26">server.listen(8080)</span>
+</pre>
+<pre style="color:#526057; background-color:#ecf4ee; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#78877d; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#55859b; font-weight:bold">require</span> <span style="color:#489963">&quot;http/server&quot;</span>
+
+server <span style="color:#526057">=</span> HTTP<span style="color:#526057">::</span>Server<span style="color:#526057">.</span>new <span style="color:#55859b; font-weight:bold">do</span> |context|
+  context<span style="color:#526057">.</span>response<span style="color:#526057">.</span>content_type <span style="color:#526057">=</span> <span style="color:#489963">&quot;text/plain&quot;</span>
+  context<span style="color:#526057">.</span>response<span style="color:#526057">.</span>print <span style="color:#489963">&quot;Hello world, got #{context.request.path}</span><span style="color:#526057">!</span><span style="color:#489963">&quot;</span>
+<span style="color:#489963">end</span>
+<span style="color:#489963"></span>
+<span style="color:#489963">puts &quot;</span>Listening on http<span style="color:#526057">://</span><span style="color:#9f713c">127.0.0.1</span><span style="color:#526057">:</span><span style="color:#9f713c">8080</span><span style="color:#489963">&quot;</span>
+<span style="color:#489963">server.listen(8080)</span>
+</pre>
+<pre style="color:#a7a7a7; background-color:#1e1e1e; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#5f5a60; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#9b859d; font-weight:bold">require</span> <span style="color:#8f9d6a">&quot;http/server&quot;</span>
+
+server <span style="color:#a7a7a7">=</span> HTTP<span style="color:#a7a7a7">::</span>Server<span style="color:#a7a7a7">.</span>new <span style="color:#9b859d; font-weight:bold">do</span> |context|
+  context<span style="color:#a7a7a7">.</span>response<span style="color:#a7a7a7">.</span>content_type <span style="color:#a7a7a7">=</span> <span style="color:#8f9d6a">&quot;text/plain&quot;</span>
+  context<span style="color:#a7a7a7">.</span>response<span style="color:#a7a7a7">.</span>print <span style="color:#8f9d6a">&quot;Hello world, got #{context.request.path}</span><span style="color:#a7a7a7">!</span><span style="color:#8f9d6a">&quot;</span>
+<span style="color:#8f9d6a">end</span>
+<span style="color:#8f9d6a"></span>
+<span style="color:#8f9d6a">puts &quot;</span>Listening on http<span style="color:#a7a7a7">://</span><span style="color:#cda869">127.0.0.1</span><span style="color:#a7a7a7">:</span><span style="color:#cda869">8080</span><span style="color:#8f9d6a">&quot;</span>
+<span style="color:#8f9d6a">server.listen(8080)</span>
+</pre>
+<pre style="color:#a39a90; background-color:#16130f; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#5a5047; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#82576d; font-weight:bold">require</span> <span style="color:#57826d">&quot;http/server&quot;</span>
+
+server <span style="color:#a39a90">=</span> HTTP<span style="color:#a39a90">::</span>Server<span style="color:#a39a90">.</span>new <span style="color:#82576d; font-weight:bold">do</span> |context|
+  context<span style="color:#a39a90">.</span>response<span style="color:#a39a90">.</span>content_type <span style="color:#a39a90">=</span> <span style="color:#57826d">&quot;text/plain&quot;</span>
+  context<span style="color:#a39a90">.</span>response<span style="color:#a39a90">.</span>print <span style="color:#57826d">&quot;Hello world, got #{context.request.path}</span><span style="color:#a39a90">!</span><span style="color:#57826d">&quot;</span>
+<span style="color:#57826d">end</span>
+<span style="color:#57826d"></span>
+<span style="color:#57826d">puts &quot;</span>Listening on http<span style="color:#a39a90">://</span><span style="color:#828257">127.0.0.1</span><span style="color:#a39a90">:</span><span style="color:#828257">8080</span><span style="color:#57826d">&quot;</span>
+<span style="color:#57826d">server.listen(8080)</span>
+</pre>
+<pre style="color:#b7b8b9; background-color:#0c0d0e; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#737475; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#756bb1; font-weight:bold">require</span> <span style="color:#31a354">&quot;http/server&quot;</span>
+
+server <span style="color:#b7b8b9">=</span> HTTP<span style="color:#b7b8b9">::</span>Server<span style="color:#b7b8b9">.</span>new <span style="color:#756bb1; font-weight:bold">do</span> |context|
+  context<span style="color:#b7b8b9">.</span>response<span style="color:#b7b8b9">.</span>content_type <span style="color:#b7b8b9">=</span> <span style="color:#31a354">&quot;text/plain&quot;</span>
+  context<span style="color:#b7b8b9">.</span>response<span style="color:#b7b8b9">.</span>print <span style="color:#31a354">&quot;Hello world, got #{context.request.path}</span><span style="color:#b7b8b9">!</span><span style="color:#31a354">&quot;</span>
+<span style="color:#31a354">end</span>
+<span style="color:#31a354"></span>
+<span style="color:#31a354">puts &quot;</span>Listening on http<span style="color:#b7b8b9">://</span><span style="color:#e6550d">127.0.0.1</span><span style="color:#b7b8b9">:</span><span style="color:#e6550d">8080</span><span style="color:#31a354">&quot;</span>
+<span style="color:#31a354">server.listen(8080)</span>
+</pre>
+<pre style="color:#585050; background-color:#f4ecec; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#7e7777; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#8464c4; font-weight:bold">require</span> <span style="color:#4b8b8b">&quot;http/server&quot;</span>
+
+server <span style="color:#585050">=</span> HTTP<span style="color:#585050">::</span>Server<span style="color:#585050">.</span>new <span style="color:#8464c4; font-weight:bold">do</span> |context|
+  context<span style="color:#585050">.</span>response<span style="color:#585050">.</span>content_type <span style="color:#585050">=</span> <span style="color:#4b8b8b">&quot;text/plain&quot;</span>
+  context<span style="color:#585050">.</span>response<span style="color:#585050">.</span>print <span style="color:#4b8b8b">&quot;Hello world, got #{context.request.path}</span><span style="color:#585050">!</span><span style="color:#4b8b8b">&quot;</span>
+<span style="color:#4b8b8b">end</span>
+<span style="color:#4b8b8b"></span>
+<span style="color:#4b8b8b">puts &quot;</span>Listening on http<span style="color:#585050">://</span><span style="color:#b45a3c">127.0.0.1</span><span style="color:#585050">:</span><span style="color:#b45a3c">8080</span><span style="color:#4b8b8b">&quot;</span>
+<span style="color:#4b8b8b">server.listen(8080)</span>
+</pre>
+<pre style="color:#5f574f; background-color:#000000; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#008751; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#ff77a8; font-weight:bold">require</span> <span style="color:#00e756">&quot;http/server&quot;</span>
+
+server <span style="color:#5f574f">=</span> HTTP<span style="color:#5f574f">::</span>Server<span style="color:#5f574f">.</span>new <span style="color:#ff77a8; font-weight:bold">do</span> |context|
+  context<span style="color:#5f574f">.</span>response<span style="color:#5f574f">.</span>content_type <span style="color:#5f574f">=</span> <span style="color:#00e756">&quot;text/plain&quot;</span>
+  context<span style="color:#5f574f">.</span>response<span style="color:#5f574f">.</span>print <span style="color:#00e756">&quot;Hello world, got #{context.request.path}</span><span style="color:#5f574f">!</span><span style="color:#00e756">&quot;</span>
+<span style="color:#00e756">end</span>
+<span style="color:#00e756"></span>
+<span style="color:#00e756">puts &quot;</span>Listening on http<span style="color:#5f574f">://</span><span style="color:#ffa300">127.0.0.1</span><span style="color:#5f574f">:</span><span style="color:#ffa300">8080</span><span style="color:#00e756">&quot;</span>
+<span style="color:#00e756">server.listen(8080)</span>
+</pre>
+<pre style="color:#a6afb8; background-color:#18262f; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#667581; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#a363d5; font-weight:bold">require</span> <span style="color:#7cc844">&quot;http/server&quot;</span>
+
+server <span style="color:#a6afb8">=</span> HTTP<span style="color:#a6afb8">::</span>Server<span style="color:#a6afb8">.</span>new <span style="color:#a363d5; font-weight:bold">do</span> |context|
+  context<span style="color:#a6afb8">.</span>response<span style="color:#a6afb8">.</span>content_type <span style="color:#a6afb8">=</span> <span style="color:#7cc844">&quot;text/plain&quot;</span>
+  context<span style="color:#a6afb8">.</span>response<span style="color:#a6afb8">.</span>print <span style="color:#7cc844">&quot;Hello world, got #{context.request.path}</span><span style="color:#a6afb8">!</span><span style="color:#7cc844">&quot;</span>
+<span style="color:#7cc844">end</span>
+<span style="color:#7cc844"></span>
+<span style="color:#7cc844">puts &quot;</span>Listening on http<span style="color:#a6afb8">://</span><span style="color:#e66b2b">127.0.0.1</span><span style="color:#a6afb8">:</span><span style="color:#e66b2b">8080</span><span style="color:#7cc844">&quot;</span>
+<span style="color:#7cc844">server.listen(8080)</span>
+</pre>
+<pre style="color:#b9b5b8; background-color:#322931; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#797379; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#c85e7c; font-weight:bold">require</span> <span style="color:#8fc13e">&quot;http/server&quot;</span>
+
+server <span style="color:#b9b5b8">=</span> HTTP<span style="color:#b9b5b8">::</span>Server<span style="color:#b9b5b8">.</span>new <span style="color:#c85e7c; font-weight:bold">do</span> |context|
+  context<span style="color:#b9b5b8">.</span>response<span style="color:#b9b5b8">.</span>content_type <span style="color:#b9b5b8">=</span> <span style="color:#8fc13e">&quot;text/plain&quot;</span>
+  context<span style="color:#b9b5b8">.</span>response<span style="color:#b9b5b8">.</span>print <span style="color:#8fc13e">&quot;Hello world, got #{context.request.path}</span><span style="color:#b9b5b8">!</span><span style="color:#8fc13e">&quot;</span>
+<span style="color:#8fc13e">end</span>
+<span style="color:#8fc13e"></span>
+<span style="color:#8fc13e">puts &quot;</span>Listening on http<span style="color:#b9b5b8">://</span><span style="color:#fd8b19">127.0.0.1</span><span style="color:#b9b5b8">:</span><span style="color:#fd8b19">8080</span><span style="color:#8fc13e">&quot;</span>
+<span style="color:#8fc13e">server.listen(8080)</span>
+</pre>
+<pre style="color:#8b8198; background-color:#fbf1f2; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#bfb9c6; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#bb99b4; font-weight:bold">require</span> <span style="color:#a3b367">&quot;http/server&quot;</span>
+
+server <span style="color:#8b8198">=</span> HTTP<span style="color:#8b8198">::</span>Server<span style="color:#8b8198">.</span>new <span style="color:#bb99b4; font-weight:bold">do</span> |context|
+  context<span style="color:#8b8198">.</span>response<span style="color:#8b8198">.</span>content_type <span style="color:#8b8198">=</span> <span style="color:#a3b367">&quot;text/plain&quot;</span>
+  context<span style="color:#8b8198">.</span>response<span style="color:#8b8198">.</span>print <span style="color:#a3b367">&quot;Hello world, got #{context.request.path}</span><span style="color:#8b8198">!</span><span style="color:#a3b367">&quot;</span>
+<span style="color:#a3b367">end</span>
+<span style="color:#a3b367"></span>
+<span style="color:#a3b367">puts &quot;</span>Listening on http<span style="color:#8b8198">://</span><span style="color:#ebb790">127.0.0.1</span><span style="color:#8b8198">:</span><span style="color:#ebb790">8080</span><span style="color:#a3b367">&quot;</span>
+<span style="color:#a3b367">server.listen(8080)</span>
+</pre>
+<pre style="color:#a5a2a2; background-color:#090300; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#5c5855; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#a16a94; font-weight:bold">require</span> <span style="color:#01a252">&quot;http/server&quot;</span>
+
+server <span style="color:#a5a2a2">=</span> HTTP<span style="color:#a5a2a2">::</span>Server<span style="color:#a5a2a2">.</span>new <span style="color:#a16a94; font-weight:bold">do</span> |context|
+  context<span style="color:#a5a2a2">.</span>response<span style="color:#a5a2a2">.</span>content_type <span style="color:#a5a2a2">=</span> <span style="color:#01a252">&quot;text/plain&quot;</span>
+  context<span style="color:#a5a2a2">.</span>response<span style="color:#a5a2a2">.</span>print <span style="color:#01a252">&quot;Hello world, got #{context.request.path}</span><span style="color:#a5a2a2">!</span><span style="color:#01a252">&quot;</span>
+<span style="color:#01a252">end</span>
+<span style="color:#01a252"></span>
+<span style="color:#01a252">puts &quot;</span>Listening on http<span style="color:#a5a2a2">://</span><span style="color:#e8bbd0">127.0.0.1</span><span style="color:#a5a2a2">:</span><span style="color:#e8bbd0">8080</span><span style="color:#01a252">&quot;</span>
+<span style="color:#01a252">server.listen(8080)</span>
+</pre>
+<pre style="color:#abb2bf; background-color:#282c34; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#545862; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#c678dd; font-weight:bold">require</span> <span style="color:#98c379">&quot;http/server&quot;</span>
+
+server <span style="color:#abb2bf">=</span> HTTP<span style="color:#abb2bf">::</span>Server<span style="color:#abb2bf">.</span>new <span style="color:#c678dd; font-weight:bold">do</span> |context|
+  context<span style="color:#abb2bf">.</span>response<span style="color:#abb2bf">.</span>content_type <span style="color:#abb2bf">=</span> <span style="color:#98c379">&quot;text/plain&quot;</span>
+  context<span style="color:#abb2bf">.</span>response<span style="color:#abb2bf">.</span>print <span style="color:#98c379">&quot;Hello world, got #{context.request.path}</span><span style="color:#abb2bf">!</span><span style="color:#98c379">&quot;</span>
+<span style="color:#98c379">end</span>
+<span style="color:#98c379"></span>
+<span style="color:#98c379">puts &quot;</span>Listening on http<span style="color:#abb2bf">://</span><span style="color:#d19a66">127.0.0.1</span><span style="color:#abb2bf">:</span><span style="color:#d19a66">8080</span><span style="color:#98c379">&quot;</span>
+<span style="color:#98c379">server.listen(8080)</span>
+</pre>
+<pre style="color:#181818; background-color:#f6f6f6; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#898989; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#a94598; font-weight:bold">require</span> <span style="color:#38781c">&quot;http/server&quot;</span>
+
+server <span style="color:#181818">=</span> HTTP<span style="color:#181818">::</span>Server<span style="color:#181818">.</span>new <span style="color:#a94598; font-weight:bold">do</span> |context|
+  context<span style="color:#181818">.</span>response<span style="color:#181818">.</span>content_type <span style="color:#181818">=</span> <span style="color:#38781c">&quot;text/plain&quot;</span>
+  context<span style="color:#181818">.</span>response<span style="color:#181818">.</span>print <span style="color:#38781c">&quot;Hello world, got #{context.request.path}</span><span style="color:#181818">!</span><span style="color:#38781c">&quot;</span>
+<span style="color:#38781c">end</span>
+<span style="color:#38781c"></span>
+<span style="color:#38781c">puts &quot;</span>Listening on http<span style="color:#181818">://</span><span style="color:#c43e18">127.0.0.1</span><span style="color:#181818">:</span><span style="color:#c43e18">8080</span><span style="color:#38781c">&quot;</span>
+<span style="color:#38781c">server.listen(8080)</span>
+</pre>
+<pre style="color:#a6a28c; background-color:#20201d; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#7d7a68; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#b854d4; font-weight:bold">require</span> <span style="color:#60ac39">&quot;http/server&quot;</span>
+
+server <span style="color:#a6a28c">=</span> HTTP<span style="color:#a6a28c">::</span>Server<span style="color:#a6a28c">.</span>new <span style="color:#b854d4; font-weight:bold">do</span> |context|
+  context<span style="color:#a6a28c">.</span>response<span style="color:#a6a28c">.</span>content_type <span style="color:#a6a28c">=</span> <span style="color:#60ac39">&quot;text/plain&quot;</span>
+  context<span style="color:#a6a28c">.</span>response<span style="color:#a6a28c">.</span>print <span style="color:#60ac39">&quot;Hello world, got #{context.request.path}</span><span style="color:#a6a28c">!</span><span style="color:#60ac39">&quot;</span>
+<span style="color:#60ac39">end</span>
+<span style="color:#60ac39"></span>
+<span style="color:#60ac39">puts &quot;</span>Listening on http<span style="color:#a6a28c">://</span><span style="color:#b65611">127.0.0.1</span><span style="color:#a6a28c">:</span><span style="color:#b65611">8080</span><span style="color:#60ac39">&quot;</span>
+<span style="color:#60ac39">server.listen(8080)</span>
+</pre>
+<pre style="color:#b0bec5; background-color:#263238; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#546e7a; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#651fff; font-weight:bold">require</span> <span style="color:#00e676">&quot;http/server&quot;</span>
+
+server <span style="color:#b0bec5">=</span> HTTP<span style="color:#b0bec5">::</span>Server<span style="color:#b0bec5">.</span>new <span style="color:#651fff; font-weight:bold">do</span> |context|
+  context<span style="color:#b0bec5">.</span>response<span style="color:#b0bec5">.</span>content_type <span style="color:#b0bec5">=</span> <span style="color:#00e676">&quot;text/plain&quot;</span>
+  context<span style="color:#b0bec5">.</span>response<span style="color:#b0bec5">.</span>print <span style="color:#00e676">&quot;Hello world, got #{context.request.path}</span><span style="color:#b0bec5">!</span><span style="color:#00e676">&quot;</span>
+<span style="color:#00e676">end</span>
+<span style="color:#00e676"></span>
+<span style="color:#00e676">puts &quot;</span>Listening on http<span style="color:#b0bec5">://</span><span style="color:#ff9100">127.0.0.1</span><span style="color:#b0bec5">:</span><span style="color:#ff9100">8080</span><span style="color:#00e676">&quot;</span>
+<span style="color:#00e676">server.listen(8080)</span>
+</pre>
+<pre style="color:#8ca68c; background-color:#131513; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#687d68; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#ad2bee; font-weight:bold">require</span> <span style="color:#29a329">&quot;http/server&quot;</span>
+
+server <span style="color:#8ca68c">=</span> HTTP<span style="color:#8ca68c">::</span>Server<span style="color:#8ca68c">.</span>new <span style="color:#ad2bee; font-weight:bold">do</span> |context|
+  context<span style="color:#8ca68c">.</span>response<span style="color:#8ca68c">.</span>content_type <span style="color:#8ca68c">=</span> <span style="color:#29a329">&quot;text/plain&quot;</span>
+  context<span style="color:#8ca68c">.</span>response<span style="color:#8ca68c">.</span>print <span style="color:#29a329">&quot;Hello world, got #{context.request.path}</span><span style="color:#8ca68c">!</span><span style="color:#29a329">&quot;</span>
+<span style="color:#29a329">end</span>
+<span style="color:#29a329"></span>
+<span style="color:#29a329">puts &quot;</span>Listening on http<span style="color:#8ca68c">://</span><span style="color:#87711d">127.0.0.1</span><span style="color:#8ca68c">:</span><span style="color:#87711d">8080</span><span style="color:#29a329">&quot;</span>
+<span style="color:#29a329">server.listen(8080)</span>
+</pre>
+<pre style="color:#8a8585; background-color:#1b1818; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#655d5d; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#8464c4; font-weight:bold">require</span> <span style="color:#4b8b8b">&quot;http/server&quot;</span>
+
+server <span style="color:#8a8585">=</span> HTTP<span style="color:#8a8585">::</span>Server<span style="color:#8a8585">.</span>new <span style="color:#8464c4; font-weight:bold">do</span> |context|
+  context<span style="color:#8a8585">.</span>response<span style="color:#8a8585">.</span>content_type <span style="color:#8a8585">=</span> <span style="color:#4b8b8b">&quot;text/plain&quot;</span>
+  context<span style="color:#8a8585">.</span>response<span style="color:#8a8585">.</span>print <span style="color:#4b8b8b">&quot;Hello world, got #{context.request.path}</span><span style="color:#8a8585">!</span><span style="color:#4b8b8b">&quot;</span>
+<span style="color:#4b8b8b">end</span>
+<span style="color:#4b8b8b"></span>
+<span style="color:#4b8b8b">puts &quot;</span>Listening on http<span style="color:#8a8585">://</span><span style="color:#b45a3c">127.0.0.1</span><span style="color:#8a8585">:</span><span style="color:#b45a3c">8080</span><span style="color:#4b8b8b">&quot;</span>
+<span style="color:#4b8b8b">server.listen(8080)</span>
+</pre>
+<pre style="color:#383838; background-color:#f8f8f8; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#b8b8b8; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#ba8baf; font-weight:bold">require</span> <span style="color:#a1b56c">&quot;http/server&quot;</span>
+
+server <span style="color:#383838">=</span> HTTP<span style="color:#383838">::</span>Server<span style="color:#383838">.</span>new <span style="color:#ba8baf; font-weight:bold">do</span> |context|
+  context<span style="color:#383838">.</span>response<span style="color:#383838">.</span>content_type <span style="color:#383838">=</span> <span style="color:#a1b56c">&quot;text/plain&quot;</span>
+  context<span style="color:#383838">.</span>response<span style="color:#383838">.</span>print <span style="color:#a1b56c">&quot;Hello world, got #{context.request.path}</span><span style="color:#383838">!</span><span style="color:#a1b56c">&quot;</span>
+<span style="color:#a1b56c">end</span>
+<span style="color:#a1b56c"></span>
+<span style="color:#a1b56c">puts &quot;</span>Listening on http<span style="color:#383838">://</span><span style="color:#dc9656">127.0.0.1</span><span style="color:#383838">:</span><span style="color:#dc9656">8080</span><span style="color:#a1b56c">&quot;</span>
+<span style="color:#a1b56c">server.listen(8080)</span>
+</pre>
+<pre style="color:#695d69; background-color:#f7f3f7; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#9e8f9e; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#7b59c0; font-weight:bold">require</span> <span style="color:#918b3b">&quot;http/server&quot;</span>
+
+server <span style="color:#695d69">=</span> HTTP<span style="color:#695d69">::</span>Server<span style="color:#695d69">.</span>new <span style="color:#7b59c0; font-weight:bold">do</span> |context|
+  context<span style="color:#695d69">.</span>response<span style="color:#695d69">.</span>content_type <span style="color:#695d69">=</span> <span style="color:#918b3b">&quot;text/plain&quot;</span>
+  context<span style="color:#695d69">.</span>response<span style="color:#695d69">.</span>print <span style="color:#918b3b">&quot;Hello world, got #{context.request.path}</span><span style="color:#695d69">!</span><span style="color:#918b3b">&quot;</span>
+<span style="color:#918b3b">end</span>
+<span style="color:#918b3b"></span>
+<span style="color:#918b3b">puts &quot;</span>Listening on http<span style="color:#695d69">://</span><span style="color:#a65926">127.0.0.1</span><span style="color:#695d69">:</span><span style="color:#a65926">8080</span><span style="color:#918b3b">&quot;</span>
+<span style="color:#918b3b">server.listen(8080)</span>
+</pre>
+<pre style="color:#504945; background-color:#f2e5bc; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#bdae93; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#8f3f71; font-weight:bold">require</span> <span style="color:#79740e">&quot;http/server&quot;</span>
+
+server <span style="color:#504945">=</span> HTTP<span style="color:#504945">::</span>Server<span style="color:#504945">.</span>new <span style="color:#8f3f71; font-weight:bold">do</span> |context|
+  context<span style="color:#504945">.</span>response<span style="color:#504945">.</span>content_type <span style="color:#504945">=</span> <span style="color:#79740e">&quot;text/plain&quot;</span>
+  context<span style="color:#504945">.</span>response<span style="color:#504945">.</span>print <span style="color:#79740e">&quot;Hello world, got #{context.request.path}</span><span style="color:#504945">!</span><span style="color:#79740e">&quot;</span>
+<span style="color:#79740e">end</span>
+<span style="color:#79740e"></span>
+<span style="color:#79740e">puts &quot;</span>Listening on http<span style="color:#504945">://</span><span style="color:#af3a03">127.0.0.1</span><span style="color:#504945">:</span><span style="color:#af3a03">8080</span><span style="color:#79740e">&quot;</span>
+<span style="color:#79740e">server.listen(8080)</span>
+</pre>
+<pre style="color:#929181; background-color:#22221b; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#6c6b5a; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#5f9182; font-weight:bold">require</span> <span style="color:#7d9726">&quot;http/server&quot;</span>
+
+server <span style="color:#929181">=</span> HTTP<span style="color:#929181">::</span>Server<span style="color:#929181">.</span>new <span style="color:#5f9182; font-weight:bold">do</span> |context|
+  context<span style="color:#929181">.</span>response<span style="color:#929181">.</span>content_type <span style="color:#929181">=</span> <span style="color:#7d9726">&quot;text/plain&quot;</span>
+  context<span style="color:#929181">.</span>response<span style="color:#929181">.</span>print <span style="color:#7d9726">&quot;Hello world, got #{context.request.path}</span><span style="color:#929181">!</span><span style="color:#7d9726">&quot;</span>
+<span style="color:#7d9726">end</span>
+<span style="color:#7d9726"></span>
+<span style="color:#7d9726">puts &quot;</span>Listening on http<span style="color:#929181">://</span><span style="color:#ae7313">127.0.0.1</span><span style="color:#929181">:</span><span style="color:#ae7313">8080</span><span style="color:#7d9726">&quot;</span>
+<span style="color:#7d9726">server.listen(8080)</span>
+</pre>
+<pre style="color:#c5c8c6; background-color:#1d1f21; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#969896; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#a36ac7; font-weight:bold">require</span> <span style="color:#198844">&quot;http/server&quot;</span>
+
+server <span style="color:#c5c8c6">=</span> HTTP<span style="color:#c5c8c6">::</span>Server<span style="color:#c5c8c6">.</span>new <span style="color:#a36ac7; font-weight:bold">do</span> |context|
+  context<span style="color:#c5c8c6">.</span>response<span style="color:#c5c8c6">.</span>content_type <span style="color:#c5c8c6">=</span> <span style="color:#198844">&quot;text/plain&quot;</span>
+  context<span style="color:#c5c8c6">.</span>response<span style="color:#c5c8c6">.</span>print <span style="color:#198844">&quot;Hello world, got #{context.request.path}</span><span style="color:#c5c8c6">!</span><span style="color:#198844">&quot;</span>
+<span style="color:#198844">end</span>
+<span style="color:#198844"></span>
+<span style="color:#198844">puts &quot;</span>Listening on http<span style="color:#c5c8c6">://</span><span style="color:#f96a38">127.0.0.1</span><span style="color:#c5c8c6">:</span><span style="color:#f96a38">8080</span><span style="color:#198844">&quot;</span>
+<span style="color:#198844">server.listen(8080)</span>
+</pre>
+<pre style="color:#f1eff8; background-color:#292a44; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#666699; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#7aa5ff; font-weight:bold">require</span> <span style="color:#6dfedf">&quot;http/server&quot;</span>
+
+server <span style="color:#f1eff8">=</span> HTTP<span style="color:#f1eff8">::</span>Server<span style="color:#f1eff8">.</span>new <span style="color:#7aa5ff; font-weight:bold">do</span> |context|
+  context<span style="color:#f1eff8">.</span>response<span style="color:#f1eff8">.</span>content_type <span style="color:#f1eff8">=</span> <span style="color:#6dfedf">&quot;text/plain&quot;</span>
+  context<span style="color:#f1eff8">.</span>response<span style="color:#f1eff8">.</span>print <span style="color:#6dfedf">&quot;Hello world, got #{context.request.path}</span><span style="color:#f1eff8">!</span><span style="color:#6dfedf">&quot;</span>
+<span style="color:#6dfedf">end</span>
+<span style="color:#6dfedf"></span>
+<span style="color:#6dfedf">puts &quot;</span>Listening on http<span style="color:#f1eff8">://</span><span style="color:#efe4a1">127.0.0.1</span><span style="color:#f1eff8">:</span><span style="color:#efe4a1">8080</span><span style="color:#6dfedf">&quot;</span>
+<span style="color:#6dfedf">server.listen(8080)</span>
+</pre>
+<pre style="color:#dab997; background-color:#262626; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#8a8a8a; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#d485ad; font-weight:bold">require</span> <span style="color:#afaf00">&quot;http/server&quot;</span>
+
+server <span style="color:#dab997">=</span> HTTP<span style="color:#dab997">::</span>Server<span style="color:#dab997">.</span>new <span style="color:#d485ad; font-weight:bold">do</span> |context|
+  context<span style="color:#dab997">.</span>response<span style="color:#dab997">.</span>content_type <span style="color:#dab997">=</span> <span style="color:#afaf00">&quot;text/plain&quot;</span>
+  context<span style="color:#dab997">.</span>response<span style="color:#dab997">.</span>print <span style="color:#afaf00">&quot;Hello world, got #{context.request.path}</span><span style="color:#dab997">!</span><span style="color:#afaf00">&quot;</span>
+<span style="color:#afaf00">end</span>
+<span style="color:#afaf00"></span>
+<span style="color:#afaf00">puts &quot;</span>Listening on http<span style="color:#dab997">://</span><span style="color:#ff8700">127.0.0.1</span><span style="color:#dab997">:</span><span style="color:#ff8700">8080</span><span style="color:#afaf00">&quot;</span>
+<span style="color:#afaf00">server.listen(8080)</span>
+</pre>
+<pre style="color:#d8d8d8; background-color:#292c36; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#65568a; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#b74989; font-weight:bold">require</span> <span style="color:#95c76f">&quot;http/server&quot;</span>
+
+server <span style="color:#d8d8d8">=</span> HTTP<span style="color:#d8d8d8">::</span>Server<span style="color:#d8d8d8">.</span>new <span style="color:#b74989; font-weight:bold">do</span> |context|
+  context<span style="color:#d8d8d8">.</span>response<span style="color:#d8d8d8">.</span>content_type <span style="color:#d8d8d8">=</span> <span style="color:#95c76f">&quot;text/plain&quot;</span>
+  context<span style="color:#d8d8d8">.</span>response<span style="color:#d8d8d8">.</span>print <span style="color:#95c76f">&quot;Hello world, got #{context.request.path}</span><span style="color:#d8d8d8">!</span><span style="color:#95c76f">&quot;</span>
+<span style="color:#95c76f">end</span>
+<span style="color:#95c76f"></span>
+<span style="color:#95c76f">puts &quot;</span>Listening on http<span style="color:#d8d8d8">://</span><span style="color:#d28e5d">127.0.0.1</span><span style="color:#d8d8d8">:</span><span style="color:#d28e5d">8080</span><span style="color:#95c76f">&quot;</span>
+<span style="color:#95c76f">server.listen(8080)</span>
+</pre>
+<pre style="color:#ffeeff; background-color:#1e0528; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#320f55; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#8991bb; font-weight:bold">require</span> <span style="color:#05cb0d">&quot;http/server&quot;</span>
+
+server <span style="color:#ffeeff">=</span> HTTP<span style="color:#ffeeff">::</span>Server<span style="color:#ffeeff">.</span>new <span style="color:#8991bb; font-weight:bold">do</span> |context|
+  context<span style="color:#ffeeff">.</span>response<span style="color:#ffeeff">.</span>content_type <span style="color:#ffeeff">=</span> <span style="color:#05cb0d">&quot;text/plain&quot;</span>
+  context<span style="color:#ffeeff">.</span>response<span style="color:#ffeeff">.</span>print <span style="color:#05cb0d">&quot;Hello world, got #{context.request.path}</span><span style="color:#ffeeff">!</span><span style="color:#05cb0d">&quot;</span>
+<span style="color:#05cb0d">end</span>
+<span style="color:#05cb0d"></span>
+<span style="color:#05cb0d">puts &quot;</span>Listening on http<span style="color:#ffeeff">://</span><span style="color:#aa00a3">127.0.0.1</span><span style="color:#ffeeff">:</span><span style="color:#aa00a3">8080</span><span style="color:#05cb0d">&quot;</span>
+<span style="color:#05cb0d">server.listen(8080)</span>
+</pre>
+<pre style="color:#b5b3aa; background-color:#000000; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#6c6c66; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#ff73fd; font-weight:bold">require</span> <span style="color:#a8ff60">&quot;http/server&quot;</span>
+
+server <span style="color:#b5b3aa">=</span> HTTP<span style="color:#b5b3aa">::</span>Server<span style="color:#b5b3aa">.</span>new <span style="color:#ff73fd; font-weight:bold">do</span> |context|
+  context<span style="color:#b5b3aa">.</span>response<span style="color:#b5b3aa">.</span>content_type <span style="color:#b5b3aa">=</span> <span style="color:#a8ff60">&quot;text/plain&quot;</span>
+  context<span style="color:#b5b3aa">.</span>response<span style="color:#b5b3aa">.</span>print <span style="color:#a8ff60">&quot;Hello world, got #{context.request.path}</span><span style="color:#b5b3aa">!</span><span style="color:#a8ff60">&quot;</span>
+<span style="color:#a8ff60">end</span>
+<span style="color:#a8ff60"></span>
+<span style="color:#a8ff60">puts &quot;</span>Listening on http<span style="color:#b5b3aa">://</span><span style="color:#e9c062">127.0.0.1</span><span style="color:#b5b3aa">:</span><span style="color:#e9c062">8080</span><span style="color:#a8ff60">&quot;</span>
+<span style="color:#a8ff60">server.listen(8080)</span>
+</pre>
+<pre style="color:#c0c0c0; background-color:#5e5e5e; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#808080; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#a90d91; font-weight:bold">require</span> <span style="color:#007400">&quot;http/server&quot;</span>
+
+server <span style="color:#c0c0c0">=</span> HTTP<span style="color:#c0c0c0">::</span>Server<span style="color:#c0c0c0">.</span>new <span style="color:#a90d91; font-weight:bold">do</span> |context|
+  context<span style="color:#c0c0c0">.</span>response<span style="color:#c0c0c0">.</span>content_type <span style="color:#c0c0c0">=</span> <span style="color:#007400">&quot;text/plain&quot;</span>
+  context<span style="color:#c0c0c0">.</span>response<span style="color:#c0c0c0">.</span>print <span style="color:#007400">&quot;Hello world, got #{context.request.path}</span><span style="color:#c0c0c0">!</span><span style="color:#007400">&quot;</span>
+<span style="color:#007400">end</span>
+<span style="color:#007400"></span>
+<span style="color:#007400">puts &quot;</span>Listening on http<span style="color:#c0c0c0">://</span><span style="color:#eb8500">127.0.0.1</span><span style="color:#c0c0c0">:</span><span style="color:#eb8500">8080</span><span style="color:#007400">&quot;</span>
+<span style="color:#007400">server.listen(8080)</span>
+</pre>
+<pre style="color:#504945; background-color:#f9f5d7; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#bdae93; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#8f3f71; font-weight:bold">require</span> <span style="color:#79740e">&quot;http/server&quot;</span>
+
+server <span style="color:#504945">=</span> HTTP<span style="color:#504945">::</span>Server<span style="color:#504945">.</span>new <span style="color:#8f3f71; font-weight:bold">do</span> |context|
+  context<span style="color:#504945">.</span>response<span style="color:#504945">.</span>content_type <span style="color:#504945">=</span> <span style="color:#79740e">&quot;text/plain&quot;</span>
+  context<span style="color:#504945">.</span>response<span style="color:#504945">.</span>print <span style="color:#79740e">&quot;Hello world, got #{context.request.path}</span><span style="color:#504945">!</span><span style="color:#79740e">&quot;</span>
+<span style="color:#79740e">end</span>
+<span style="color:#79740e"></span>
+<span style="color:#79740e">puts &quot;</span>Listening on http<span style="color:#504945">://</span><span style="color:#af3a03">127.0.0.1</span><span style="color:#504945">:</span><span style="color:#af3a03">8080</span><span style="color:#79740e">&quot;</span>
+<span style="color:#79740e">server.listen(8080)</span>
+</pre>
+<pre style="color:#948e48; background-color:#201602; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#6c6823; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#8868b3; font-weight:bold">require</span> <span style="color:#18974e">&quot;http/server&quot;</span>
+
+server <span style="color:#948e48">=</span> HTTP<span style="color:#948e48">::</span>Server<span style="color:#948e48">.</span>new <span style="color:#8868b3; font-weight:bold">do</span> |context|
+  context<span style="color:#948e48">.</span>response<span style="color:#948e48">.</span>content_type <span style="color:#948e48">=</span> <span style="color:#18974e">&quot;text/plain&quot;</span>
+  context<span style="color:#948e48">.</span>response<span style="color:#948e48">.</span>print <span style="color:#18974e">&quot;Hello world, got #{context.request.path}</span><span style="color:#948e48">!</span><span style="color:#18974e">&quot;</span>
+<span style="color:#18974e">end</span>
+<span style="color:#18974e"></span>
+<span style="color:#18974e">puts &quot;</span>Listening on http<span style="color:#948e48">://</span><span style="color:#b36144">127.0.0.1</span><span style="color:#948e48">:</span><span style="color:#b36144">8080</span><span style="color:#18974e">&quot;</span>
+<span style="color:#18974e">server.listen(8080)</span>
+</pre>
+<pre style="color:#cabcb1; background-color:#231e18; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#9d8b70; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#bb90e2; font-weight:bold">require</span> <span style="color:#b7ba53">&quot;http/server&quot;</span>
+
+server <span style="color:#cabcb1">=</span> HTTP<span style="color:#cabcb1">::</span>Server<span style="color:#cabcb1">.</span>new <span style="color:#bb90e2; font-weight:bold">do</span> |context|
+  context<span style="color:#cabcb1">.</span>response<span style="color:#cabcb1">.</span>content_type <span style="color:#cabcb1">=</span> <span style="color:#b7ba53">&quot;text/plain&quot;</span>
+  context<span style="color:#cabcb1">.</span>response<span style="color:#cabcb1">.</span>print <span style="color:#b7ba53">&quot;Hello world, got #{context.request.path}</span><span style="color:#cabcb1">!</span><span style="color:#b7ba53">&quot;</span>
+<span style="color:#b7ba53">end</span>
+<span style="color:#b7ba53"></span>
+<span style="color:#b7ba53">puts &quot;</span>Listening on http<span style="color:#cabcb1">://</span><span style="color:#ca7f32">127.0.0.1</span><span style="color:#cabcb1">:</span><span style="color:#ca7f32">8080</span><span style="color:#b7ba53">&quot;</span>
+<span style="color:#b7ba53">server.listen(8080)</span>
+</pre>
+<pre style="color:#7ea2b4; background-color:#161b1d; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#5a7b8c; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#6b6bb8; font-weight:bold">require</span> <span style="color:#568c3b">&quot;http/server&quot;</span>
+
+server <span style="color:#7ea2b4">=</span> HTTP<span style="color:#7ea2b4">::</span>Server<span style="color:#7ea2b4">.</span>new <span style="color:#6b6bb8; font-weight:bold">do</span> |context|
+  context<span style="color:#7ea2b4">.</span>response<span style="color:#7ea2b4">.</span>content_type <span style="color:#7ea2b4">=</span> <span style="color:#568c3b">&quot;text/plain&quot;</span>
+  context<span style="color:#7ea2b4">.</span>response<span style="color:#7ea2b4">.</span>print <span style="color:#568c3b">&quot;Hello world, got #{context.request.path}</span><span style="color:#7ea2b4">!</span><span style="color:#568c3b">&quot;</span>
+<span style="color:#568c3b">end</span>
+<span style="color:#568c3b"></span>
+<span style="color:#568c3b">puts &quot;</span>Listening on http<span style="color:#7ea2b4">://</span><span style="color:#935c25">127.0.0.1</span><span style="color:#7ea2b4">:</span><span style="color:#935c25">8080</span><span style="color:#568c3b">&quot;</span>
+<span style="color:#568c3b">server.listen(8080)</span>
+</pre>
+<pre style="color:#9ea7a6; background-color:#232c31; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#3f4944; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#c59820; font-weight:bold">require</span> <span style="color:#237986">&quot;http/server&quot;</span>
+
+server <span style="color:#9ea7a6">=</span> HTTP<span style="color:#9ea7a6">::</span>Server<span style="color:#9ea7a6">.</span>new <span style="color:#c59820; font-weight:bold">do</span> |context|
+  context<span style="color:#9ea7a6">.</span>response<span style="color:#9ea7a6">.</span>content_type <span style="color:#9ea7a6">=</span> <span style="color:#237986">&quot;text/plain&quot;</span>
+  context<span style="color:#9ea7a6">.</span>response<span style="color:#9ea7a6">.</span>print <span style="color:#237986">&quot;Hello world, got #{context.request.path}</span><span style="color:#9ea7a6">!</span><span style="color:#237986">&quot;</span>
+<span style="color:#237986">end</span>
+<span style="color:#237986"></span>
+<span style="color:#237986">puts &quot;</span>Listening on http<span style="color:#9ea7a6">://</span><span style="color:#43820d">127.0.0.1</span><span style="color:#9ea7a6">:</span><span style="color:#43820d">8080</span><span style="color:#237986">&quot;</span>
+<span style="color:#237986">server.listen(8080)</span>
+</pre>
+<pre style="color:#333333; background-color:#ffffff; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#969896; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#a71d5d; font-weight:bold">require</span> <span style="color:#183691">&quot;http/server&quot;</span>
+
+server <span style="color:#333333">=</span> HTTP<span style="color:#333333">::</span>Server<span style="color:#333333">.</span>new <span style="color:#a71d5d; font-weight:bold">do</span> |context|
+  context<span style="color:#333333">.</span>response<span style="color:#333333">.</span>content_type <span style="color:#333333">=</span> <span style="color:#183691">&quot;text/plain&quot;</span>
+  context<span style="color:#333333">.</span>response<span style="color:#333333">.</span>print <span style="color:#183691">&quot;Hello world, got #{context.request.path}</span><span style="color:#333333">!</span><span style="color:#183691">&quot;</span>
+<span style="color:#183691">end</span>
+<span style="color:#183691"></span>
+<span style="color:#183691">puts &quot;</span>Listening on http<span style="color:#333333">://</span><span style="color:#0086b3">127.0.0.1</span><span style="color:#333333">:</span><span style="color:#0086b3">8080</span><span style="color:#183691">&quot;</span>
+<span style="color:#183691">server.listen(8080)</span>
+</pre>
+<pre style="color:#c3c2c4; background-color:#2e2a31; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#878589; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#b33ce8; font-weight:bold">require</span> <span style="color:#17ad98">&quot;http/server&quot;</span>
+
+server <span style="color:#c3c2c4">=</span> HTTP<span style="color:#c3c2c4">::</span>Server<span style="color:#c3c2c4">.</span>new <span style="color:#b33ce8; font-weight:bold">do</span> |context|
+  context<span style="color:#c3c2c4">.</span>response<span style="color:#c3c2c4">.</span>content_type <span style="color:#c3c2c4">=</span> <span style="color:#17ad98">&quot;text/plain&quot;</span>
+  context<span style="color:#c3c2c4">.</span>response<span style="color:#c3c2c4">.</span>print <span style="color:#17ad98">&quot;Hello world, got #{context.request.path}</span><span style="color:#c3c2c4">!</span><span style="color:#17ad98">&quot;</span>
+<span style="color:#17ad98">end</span>
+<span style="color:#17ad98"></span>
+<span style="color:#17ad98">puts &quot;</span>Listening on http<span style="color:#c3c2c4">://</span><span style="color:#d65407">127.0.0.1</span><span style="color:#c3c2c4">:</span><span style="color:#d65407">8080</span><span style="color:#17ad98">&quot;</span>
+<span style="color:#17ad98">server.listen(8080)</span>
+</pre>
+<pre style="color:#b8bbc2; background-color:#061229; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#717885; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#9989cc; font-weight:bold">require</span> <span style="color:#99bf52">&quot;http/server&quot;</span>
+
+server <span style="color:#b8bbc2">=</span> HTTP<span style="color:#b8bbc2">::</span>Server<span style="color:#b8bbc2">.</span>new <span style="color:#9989cc; font-weight:bold">do</span> |context|
+  context<span style="color:#b8bbc2">.</span>response<span style="color:#b8bbc2">.</span>content_type <span style="color:#b8bbc2">=</span> <span style="color:#99bf52">&quot;text/plain&quot;</span>
+  context<span style="color:#b8bbc2">.</span>response<span style="color:#b8bbc2">.</span>print <span style="color:#99bf52">&quot;Hello world, got #{context.request.path}</span><span style="color:#b8bbc2">!</span><span style="color:#99bf52">&quot;</span>
+<span style="color:#99bf52">end</span>
+<span style="color:#99bf52"></span>
+<span style="color:#99bf52">puts &quot;</span>Listening on http<span style="color:#b8bbc2">://</span><span style="color:#f0a000">127.0.0.1</span><span style="color:#b8bbc2">:</span><span style="color:#f0a000">8080</span><span style="color:#99bf52">&quot;</span>
+<span style="color:#99bf52">server.listen(8080)</span>
+</pre>
+<pre style="color:#eeffff; background-color:#263238; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#546e7a; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#c792ea; font-weight:bold">require</span> <span style="color:#c3e88d">&quot;http/server&quot;</span>
+
+server <span style="color:#eeffff">=</span> HTTP<span style="color:#eeffff">::</span>Server<span style="color:#eeffff">.</span>new <span style="color:#c792ea; font-weight:bold">do</span> |context|
+  context<span style="color:#eeffff">.</span>response<span style="color:#eeffff">.</span>content_type <span style="color:#eeffff">=</span> <span style="color:#c3e88d">&quot;text/plain&quot;</span>
+  context<span style="color:#eeffff">.</span>response<span style="color:#eeffff">.</span>print <span style="color:#c3e88d">&quot;Hello world, got #{context.request.path}</span><span style="color:#eeffff">!</span><span style="color:#c3e88d">&quot;</span>
+<span style="color:#c3e88d">end</span>
+<span style="color:#c3e88d"></span>
+<span style="color:#c3e88d">puts &quot;</span>Listening on http<span style="color:#eeffff">://</span><span style="color:#f78c6c">127.0.0.1</span><span style="color:#eeffff">:</span><span style="color:#f78c6c">8080</span><span style="color:#c3e88d">&quot;</span>
+<span style="color:#c3e88d">server.listen(8080)</span>
+</pre>
+<pre style="color:#eff0eb; background-color:#1e1f29; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#78787e; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#ff6ac1; font-weight:bold">require</span> <span style="color:#5af78e">&quot;http/server&quot;</span>
+
+server <span style="color:#eff0eb">=</span> HTTP<span style="color:#eff0eb">::</span>Server<span style="color:#eff0eb">.</span>new <span style="color:#ff6ac1; font-weight:bold">do</span> |context|
+  context<span style="color:#eff0eb">.</span>response<span style="color:#eff0eb">.</span>content_type <span style="color:#eff0eb">=</span> <span style="color:#5af78e">&quot;text/plain&quot;</span>
+  context<span style="color:#eff0eb">.</span>response<span style="color:#eff0eb">.</span>print <span style="color:#5af78e">&quot;Hello world, got #{context.request.path}</span><span style="color:#eff0eb">!</span><span style="color:#5af78e">&quot;</span>
+<span style="color:#5af78e">end</span>
+<span style="color:#5af78e"></span>
+<span style="color:#5af78e">puts &quot;</span>Listening on http<span style="color:#eff0eb">://</span><span style="color:#ff9f43">127.0.0.1</span><span style="color:#eff0eb">:</span><span style="color:#ff9f43">8080</span><span style="color:#5af78e">&quot;</span>
+<span style="color:#5af78e">server.listen(8080)</span>
+</pre>
+<pre style="color:#d6d6d6; background-color:#151718; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#41535b; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#a074c4; font-weight:bold">require</span> <span style="color:#9fca56">&quot;http/server&quot;</span>
+
+server <span style="color:#d6d6d6">=</span> HTTP<span style="color:#d6d6d6">::</span>Server<span style="color:#d6d6d6">.</span>new <span style="color:#a074c4; font-weight:bold">do</span> |context|
+  context<span style="color:#d6d6d6">.</span>response<span style="color:#d6d6d6">.</span>content_type <span style="color:#d6d6d6">=</span> <span style="color:#9fca56">&quot;text/plain&quot;</span>
+  context<span style="color:#d6d6d6">.</span>response<span style="color:#d6d6d6">.</span>print <span style="color:#9fca56">&quot;Hello world, got #{context.request.path}</span><span style="color:#d6d6d6">!</span><span style="color:#9fca56">&quot;</span>
+<span style="color:#9fca56">end</span>
+<span style="color:#9fca56"></span>
+<span style="color:#9fca56">puts &quot;</span>Listening on http<span style="color:#d6d6d6">://</span><span style="color:#db7b55">127.0.0.1</span><span style="color:#d6d6d6">:</span><span style="color:#db7b55">8080</span><span style="color:#9fca56">&quot;</span>
+<span style="color:#9fca56">server.listen(8080)</span>
+</pre>
+<pre style="color:#bcbabe; background-color:#2e2a31; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#838085; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#bb60ea; font-weight:bold">require</span> <span style="color:#17ad98">&quot;http/server&quot;</span>
+
+server <span style="color:#bcbabe">=</span> HTTP<span style="color:#bcbabe">::</span>Server<span style="color:#bcbabe">.</span>new <span style="color:#bb60ea; font-weight:bold">do</span> |context|
+  context<span style="color:#bcbabe">.</span>response<span style="color:#bcbabe">.</span>content_type <span style="color:#bcbabe">=</span> <span style="color:#17ad98">&quot;text/plain&quot;</span>
+  context<span style="color:#bcbabe">.</span>response<span style="color:#bcbabe">.</span>print <span style="color:#17ad98">&quot;Hello world, got #{context.request.path}</span><span style="color:#bcbabe">!</span><span style="color:#17ad98">&quot;</span>
+<span style="color:#17ad98">end</span>
+<span style="color:#17ad98"></span>
+<span style="color:#17ad98">puts &quot;</span>Listening on http<span style="color:#bcbabe">://</span><span style="color:#d65407">127.0.0.1</span><span style="color:#bcbabe">:</span><span style="color:#d65407">8080</span><span style="color:#17ad98">&quot;</span>
+<span style="color:#17ad98">server.listen(8080)</span>
+</pre>
+<pre style="color:#d3d0c8; background-color:#2d2d2d; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#747369; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#cc99cc; font-weight:bold">require</span> <span style="color:#99cc99">&quot;http/server&quot;</span>
+
+server <span style="color:#d3d0c8">=</span> HTTP<span style="color:#d3d0c8">::</span>Server<span style="color:#d3d0c8">.</span>new <span style="color:#cc99cc; font-weight:bold">do</span> |context|
+  context<span style="color:#d3d0c8">.</span>response<span style="color:#d3d0c8">.</span>content_type <span style="color:#d3d0c8">=</span> <span style="color:#99cc99">&quot;text/plain&quot;</span>
+  context<span style="color:#d3d0c8">.</span>response<span style="color:#d3d0c8">.</span>print <span style="color:#99cc99">&quot;Hello world, got #{context.request.path}</span><span style="color:#d3d0c8">!</span><span style="color:#99cc99">&quot;</span>
+<span style="color:#99cc99">end</span>
+<span style="color:#99cc99"></span>
+<span style="color:#99cc99">puts &quot;</span>Listening on http<span style="color:#d3d0c8">://</span><span style="color:#f99157">127.0.0.1</span><span style="color:#d3d0c8">:</span><span style="color:#f99157">8080</span><span style="color:#99cc99">&quot;</span>
+<span style="color:#99cc99">server.listen(8080)</span>
+</pre>
+<pre style="color:#f8f8f2; background-color:#272822; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#75715e; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#ae81ff; font-weight:bold">require</span> <span style="color:#a6e22e">&quot;http/server&quot;</span>
+
+server <span style="color:#f8f8f2">=</span> HTTP<span style="color:#f8f8f2">::</span>Server<span style="color:#f8f8f2">.</span>new <span style="color:#ae81ff; font-weight:bold">do</span> |context|
+  context<span style="color:#f8f8f2">.</span>response<span style="color:#f8f8f2">.</span>content_type <span style="color:#f8f8f2">=</span> <span style="color:#a6e22e">&quot;text/plain&quot;</span>
+  context<span style="color:#f8f8f2">.</span>response<span style="color:#f8f8f2">.</span>print <span style="color:#a6e22e">&quot;Hello world, got #{context.request.path}</span><span style="color:#f8f8f2">!</span><span style="color:#a6e22e">&quot;</span>
+<span style="color:#a6e22e">end</span>
+<span style="color:#a6e22e"></span>
+<span style="color:#a6e22e">puts &quot;</span>Listening on http<span style="color:#f8f8f2">://</span><span style="color:#fd971f">127.0.0.1</span><span style="color:#f8f8f2">:</span><span style="color:#fd971f">8080</span><span style="color:#a6e22e">&quot;</span>
+<span style="color:#a6e22e">server.listen(8080)</span>
+</pre>
+<pre style="color:#095b67; background-color:#021012; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#052e34; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#00acc1; font-weight:bold">require</span> <span style="color:#4dd0e1">&quot;http/server&quot;</span>
+
+server <span style="color:#095b67">=</span> HTTP<span style="color:#095b67">::</span>Server<span style="color:#095b67">.</span>new <span style="color:#00acc1; font-weight:bold">do</span> |context|
+  context<span style="color:#095b67">.</span>response<span style="color:#095b67">.</span>content_type <span style="color:#095b67">=</span> <span style="color:#4dd0e1">&quot;text/plain&quot;</span>
+  context<span style="color:#095b67">.</span>response<span style="color:#095b67">.</span>print <span style="color:#4dd0e1">&quot;Hello world, got #{context.request.path}</span><span style="color:#095b67">!</span><span style="color:#4dd0e1">&quot;</span>
+<span style="color:#4dd0e1">end</span>
+<span style="color:#4dd0e1"></span>
+<span style="color:#4dd0e1">puts &quot;</span>Listening on http<span style="color:#095b67">://</span><span style="color:#b3ebf2">127.0.0.1</span><span style="color:#095b67">:</span><span style="color:#b3ebf2">8080</span><span style="color:#4dd0e1">&quot;</span>
+<span style="color:#4dd0e1">server.listen(8080)</span>
+</pre>
+<pre style="color:#5e6687; background-color:#f5f7ff; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#898ea4; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#6679cc; font-weight:bold">require</span> <span style="color:#ac9739">&quot;http/server&quot;</span>
+
+server <span style="color:#5e6687">=</span> HTTP<span style="color:#5e6687">::</span>Server<span style="color:#5e6687">.</span>new <span style="color:#6679cc; font-weight:bold">do</span> |context|
+  context<span style="color:#5e6687">.</span>response<span style="color:#5e6687">.</span>content_type <span style="color:#5e6687">=</span> <span style="color:#ac9739">&quot;text/plain&quot;</span>
+  context<span style="color:#5e6687">.</span>response<span style="color:#5e6687">.</span>print <span style="color:#ac9739">&quot;Hello world, got #{context.request.path}</span><span style="color:#5e6687">!</span><span style="color:#ac9739">&quot;</span>
+<span style="color:#ac9739">end</span>
+<span style="color:#ac9739"></span>
+<span style="color:#ac9739">puts &quot;</span>Listening on http<span style="color:#5e6687">://</span><span style="color:#c76b29">127.0.0.1</span><span style="color:#5e6687">:</span><span style="color:#c76b29">8080</span><span style="color:#ac9739">&quot;</span>
+<span style="color:#ac9739">server.listen(8080)</span>
+</pre>
+<pre style="color:#516d7b; background-color:#ebf8ff; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#7195a8; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#6b6bb8; font-weight:bold">require</span> <span style="color:#568c3b">&quot;http/server&quot;</span>
+
+server <span style="color:#516d7b">=</span> HTTP<span style="color:#516d7b">::</span>Server<span style="color:#516d7b">.</span>new <span style="color:#6b6bb8; font-weight:bold">do</span> |context|
+  context<span style="color:#516d7b">.</span>response<span style="color:#516d7b">.</span>content_type <span style="color:#516d7b">=</span> <span style="color:#568c3b">&quot;text/plain&quot;</span>
+  context<span style="color:#516d7b">.</span>response<span style="color:#516d7b">.</span>print <span style="color:#568c3b">&quot;Hello world, got #{context.request.path}</span><span style="color:#516d7b">!</span><span style="color:#568c3b">&quot;</span>
+<span style="color:#568c3b">end</span>
+<span style="color:#568c3b"></span>
+<span style="color:#568c3b">puts &quot;</span>Listening on http<span style="color:#516d7b">://</span><span style="color:#935c25">127.0.0.1</span><span style="color:#516d7b">:</span><span style="color:#935c25">8080</span><span style="color:#568c3b">&quot;</span>
+<span style="color:#568c3b">server.listen(8080)</span>
+</pre>
+<pre style="color:#e5e9f0; background-color:#2e3440; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#4c566a; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#a3be8c; font-weight:bold">require</span> <span style="color:#bf616a">&quot;http/server&quot;</span>
+
+server <span style="color:#e5e9f0">=</span> HTTP<span style="color:#e5e9f0">::</span>Server<span style="color:#e5e9f0">.</span>new <span style="color:#a3be8c; font-weight:bold">do</span> |context|
+  context<span style="color:#e5e9f0">.</span>response<span style="color:#e5e9f0">.</span>content_type <span style="color:#e5e9f0">=</span> <span style="color:#bf616a">&quot;text/plain&quot;</span>
+  context<span style="color:#e5e9f0">.</span>response<span style="color:#e5e9f0">.</span>print <span style="color:#bf616a">&quot;Hello world, got #{context.request.path}</span><span style="color:#e5e9f0">!</span><span style="color:#bf616a">&quot;</span>
+<span style="color:#bf616a">end</span>
+<span style="color:#bf616a"></span>
+<span style="color:#bf616a">puts &quot;</span>Listening on http<span style="color:#e5e9f0">://</span><span style="color:#81a1c1">127.0.0.1</span><span style="color:#e5e9f0">:</span><span style="color:#81a1c1">8080</span><span style="color:#bf616a">&quot;</span>
+<span style="color:#bf616a">server.listen(8080)</span>
+</pre>
+<pre style="color:#cdd3de; background-color:#263238; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#707880; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#82aaff; font-weight:bold">require</span> <span style="color:#8bd649">&quot;http/server&quot;</span>
+
+server <span style="color:#cdd3de">=</span> HTTP<span style="color:#cdd3de">::</span>Server<span style="color:#cdd3de">.</span>new <span style="color:#82aaff; font-weight:bold">do</span> |context|
+  context<span style="color:#cdd3de">.</span>response<span style="color:#cdd3de">.</span>content_type <span style="color:#cdd3de">=</span> <span style="color:#8bd649">&quot;text/plain&quot;</span>
+  context<span style="color:#cdd3de">.</span>response<span style="color:#cdd3de">.</span>print <span style="color:#8bd649">&quot;Hello world, got #{context.request.path}</span><span style="color:#cdd3de">!</span><span style="color:#8bd649">&quot;</span>
+<span style="color:#8bd649">end</span>
+<span style="color:#8bd649"></span>
+<span style="color:#8bd649">puts &quot;</span>Listening on http<span style="color:#cdd3de">://</span><span style="color:#ea9560">127.0.0.1</span><span style="color:#cdd3de">:</span><span style="color:#ea9560">8080</span><span style="color:#8bd649">&quot;</span>
+<span style="color:#8bd649">server.listen(8080)</span>
+</pre>
+<pre style="color:#c0c5ce; background-color:#2b303b; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#65737e; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#b48ead; font-weight:bold">require</span> <span style="color:#a3be8c">&quot;http/server&quot;</span>
+
+server <span style="color:#c0c5ce">=</span> HTTP<span style="color:#c0c5ce">::</span>Server<span style="color:#c0c5ce">.</span>new <span style="color:#b48ead; font-weight:bold">do</span> |context|
+  context<span style="color:#c0c5ce">.</span>response<span style="color:#c0c5ce">.</span>content_type <span style="color:#c0c5ce">=</span> <span style="color:#a3be8c">&quot;text/plain&quot;</span>
+  context<span style="color:#c0c5ce">.</span>response<span style="color:#c0c5ce">.</span>print <span style="color:#a3be8c">&quot;Hello world, got #{context.request.path}</span><span style="color:#c0c5ce">!</span><span style="color:#a3be8c">&quot;</span>
+<span style="color:#a3be8c">end</span>
+<span style="color:#a3be8c"></span>
+<span style="color:#a3be8c">puts &quot;</span>Listening on http<span style="color:#c0c5ce">://</span><span style="color:#d08770">127.0.0.1</span><span style="color:#c0c5ce">:</span><span style="color:#d08770">8080</span><span style="color:#a3be8c">&quot;</span>
+<span style="color:#a3be8c">server.listen(8080)</span>
+</pre>
+<pre style="color:#373b41; background-color:#ffffff; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#b4b7b4; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#a36ac7; font-weight:bold">require</span> <span style="color:#198844">&quot;http/server&quot;</span>
+
+server <span style="color:#373b41">=</span> HTTP<span style="color:#373b41">::</span>Server<span style="color:#373b41">.</span>new <span style="color:#a36ac7; font-weight:bold">do</span> |context|
+  context<span style="color:#373b41">.</span>response<span style="color:#373b41">.</span>content_type <span style="color:#373b41">=</span> <span style="color:#198844">&quot;text/plain&quot;</span>
+  context<span style="color:#373b41">.</span>response<span style="color:#373b41">.</span>print <span style="color:#198844">&quot;Hello world, got #{context.request.path}</span><span style="color:#373b41">!</span><span style="color:#198844">&quot;</span>
+<span style="color:#198844">end</span>
+<span style="color:#198844"></span>
+<span style="color:#198844">puts &quot;</span>Listening on http<span style="color:#373b41">://</span><span style="color:#f96a38">127.0.0.1</span><span style="color:#373b41">:</span><span style="color:#f96a38">8080</span><span style="color:#198844">&quot;</span>
+<span style="color:#198844">server.listen(8080)</span>
+</pre>
+<pre style="color:#b0c5c8; background-color:#485867; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#8299a1; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#b386b2; font-weight:bold">require</span> <span style="color:#87b386">&quot;http/server&quot;</span>
+
+server <span style="color:#b0c5c8">=</span> HTTP<span style="color:#b0c5c8">::</span>Server<span style="color:#b0c5c8">.</span>new <span style="color:#b386b2; font-weight:bold">do</span> |context|
+  context<span style="color:#b0c5c8">.</span>response<span style="color:#b0c5c8">.</span>content_type <span style="color:#b0c5c8">=</span> <span style="color:#87b386">&quot;text/plain&quot;</span>
+  context<span style="color:#b0c5c8">.</span>response<span style="color:#b0c5c8">.</span>print <span style="color:#87b386">&quot;Hello world, got #{context.request.path}</span><span style="color:#b0c5c8">!</span><span style="color:#87b386">&quot;</span>
+<span style="color:#87b386">end</span>
+<span style="color:#87b386"></span>
+<span style="color:#87b386">puts &quot;</span>Listening on http<span style="color:#b0c5c8">://</span><span style="color:#d8bba2">127.0.0.1</span><span style="color:#b0c5c8">:</span><span style="color:#d8bba2">8080</span><span style="color:#87b386">&quot;</span>
+<span style="color:#87b386">server.listen(8080)</span>
+</pre>
+<pre style="color:#e9e9f4; background-color:#282936; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#4d4f68; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#b45bcf; font-weight:bold">require</span> <span style="color:#00f769">&quot;http/server&quot;</span>
+
+server <span style="color:#e9e9f4">=</span> HTTP<span style="color:#e9e9f4">::</span>Server<span style="color:#e9e9f4">.</span>new <span style="color:#b45bcf; font-weight:bold">do</span> |context|
+  context<span style="color:#e9e9f4">.</span>response<span style="color:#e9e9f4">.</span>content_type <span style="color:#e9e9f4">=</span> <span style="color:#00f769">&quot;text/plain&quot;</span>
+  context<span style="color:#e9e9f4">.</span>response<span style="color:#e9e9f4">.</span>print <span style="color:#00f769">&quot;Hello world, got #{context.request.path}</span><span style="color:#e9e9f4">!</span><span style="color:#00f769">&quot;</span>
+<span style="color:#00f769">end</span>
+<span style="color:#00f769"></span>
+<span style="color:#00f769">puts &quot;</span>Listening on http<span style="color:#e9e9f4">://</span><span style="color:#b45bcf">127.0.0.1</span><span style="color:#e9e9f4">:</span><span style="color:#b45bcf">8080</span><span style="color:#00f769">&quot;</span>
+<span style="color:#00f769">server.listen(8080)</span>
+</pre>
+<pre style="color:#d0c8c6; background-color:#3b3228; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#7e705a; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#a89bb9; font-weight:bold">require</span> <span style="color:#beb55b">&quot;http/server&quot;</span>
+
+server <span style="color:#d0c8c6">=</span> HTTP<span style="color:#d0c8c6">::</span>Server<span style="color:#d0c8c6">.</span>new <span style="color:#a89bb9; font-weight:bold">do</span> |context|
+  context<span style="color:#d0c8c6">.</span>response<span style="color:#d0c8c6">.</span>content_type <span style="color:#d0c8c6">=</span> <span style="color:#beb55b">&quot;text/plain&quot;</span>
+  context<span style="color:#d0c8c6">.</span>response<span style="color:#d0c8c6">.</span>print <span style="color:#beb55b">&quot;Hello world, got #{context.request.path}</span><span style="color:#d0c8c6">!</span><span style="color:#beb55b">&quot;</span>
+<span style="color:#beb55b">end</span>
+<span style="color:#beb55b"></span>
+<span style="color:#beb55b">puts &quot;</span>Listening on http<span style="color:#d0c8c6">://</span><span style="color:#d28b71">127.0.0.1</span><span style="color:#d0c8c6">:</span><span style="color:#d28b71">8080</span><span style="color:#beb55b">&quot;</span>
+<span style="color:#beb55b">server.listen(8080)</span>
+</pre>
+<pre style="color:#c0c0c0; background-color:#000000; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#808080; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#4700a5; font-weight:bold">require</span> <span style="color:#1fb714">&quot;http/server&quot;</span>
+
+server <span style="color:#c0c0c0">=</span> HTTP<span style="color:#c0c0c0">::</span>Server<span style="color:#c0c0c0">.</span>new <span style="color:#4700a5; font-weight:bold">do</span> |context|
+  context<span style="color:#c0c0c0">.</span>response<span style="color:#c0c0c0">.</span>content_type <span style="color:#c0c0c0">=</span> <span style="color:#1fb714">&quot;text/plain&quot;</span>
+  context<span style="color:#c0c0c0">.</span>response<span style="color:#c0c0c0">.</span>print <span style="color:#1fb714">&quot;Hello world, got #{context.request.path}</span><span style="color:#c0c0c0">!</span><span style="color:#1fb714">&quot;</span>
+<span style="color:#1fb714">end</span>
+<span style="color:#1fb714"></span>
+<span style="color:#1fb714">puts &quot;</span>Listening on http<span style="color:#c0c0c0">://</span><span style="color:#ff6403">127.0.0.1</span><span style="color:#c0c0c0">:</span><span style="color:#ff6403">8080</span><span style="color:#1fb714">&quot;</span>
+<span style="color:#1fb714">server.listen(8080)</span>
+</pre>
+<pre style="color:#939599; background-color:#282b35; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#686a71; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#b21889; font-weight:bold">require</span> <span style="color:#df0002">&quot;http/server&quot;</span>
+
+server <span style="color:#939599">=</span> HTTP<span style="color:#939599">::</span>Server<span style="color:#939599">.</span>new <span style="color:#b21889; font-weight:bold">do</span> |context|
+  context<span style="color:#939599">.</span>response<span style="color:#939599">.</span>content_type <span style="color:#939599">=</span> <span style="color:#df0002">&quot;text/plain&quot;</span>
+  context<span style="color:#939599">.</span>response<span style="color:#939599">.</span>print <span style="color:#df0002">&quot;Hello world, got #{context.request.path}</span><span style="color:#939599">!</span><span style="color:#df0002">&quot;</span>
+<span style="color:#df0002">end</span>
+<span style="color:#df0002"></span>
+<span style="color:#df0002">puts &quot;</span>Listening on http<span style="color:#939599">://</span><span style="color:#786dc5">127.0.0.1</span><span style="color:#939599">:</span><span style="color:#786dc5">8080</span><span style="color:#df0002">&quot;</span>
+<span style="color:#df0002">server.listen(8080)</span>
+</pre>
+<pre style="color:#a3a3a3; background-color:#1f2022; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#585858; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#a31db1; font-weight:bold">require</span> <span style="color:#67b11d">&quot;http/server&quot;</span>
+
+server <span style="color:#a3a3a3">=</span> HTTP<span style="color:#a3a3a3">::</span>Server<span style="color:#a3a3a3">.</span>new <span style="color:#a31db1; font-weight:bold">do</span> |context|
+  context<span style="color:#a3a3a3">.</span>response<span style="color:#a3a3a3">.</span>content_type <span style="color:#a3a3a3">=</span> <span style="color:#67b11d">&quot;text/plain&quot;</span>
+  context<span style="color:#a3a3a3">.</span>response<span style="color:#a3a3a3">.</span>print <span style="color:#67b11d">&quot;Hello world, got #{context.request.path}</span><span style="color:#a3a3a3">!</span><span style="color:#67b11d">&quot;</span>
+<span style="color:#67b11d">end</span>
+<span style="color:#67b11d"></span>
+<span style="color:#67b11d">puts &quot;</span>Listening on http<span style="color:#a3a3a3">://</span><span style="color:#ffa500">127.0.0.1</span><span style="color:#a3a3a3">:</span><span style="color:#ffa500">8080</span><span style="color:#67b11d">&quot;</span>
+<span style="color:#67b11d">server.listen(8080)</span>
+</pre>
+<pre style="color:#d0d0d0; background-color:#151515; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#505050; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#ad00a1; font-weight:bold">require</span> <span style="color:#00c918">&quot;http/server&quot;</span>
+
+server <span style="color:#d0d0d0">=</span> HTTP<span style="color:#d0d0d0">::</span>Server<span style="color:#d0d0d0">.</span>new <span style="color:#ad00a1; font-weight:bold">do</span> |context|
+  context<span style="color:#d0d0d0">.</span>response<span style="color:#d0d0d0">.</span>content_type <span style="color:#d0d0d0">=</span> <span style="color:#00c918">&quot;text/plain&quot;</span>
+  context<span style="color:#d0d0d0">.</span>response<span style="color:#d0d0d0">.</span>print <span style="color:#00c918">&quot;Hello world, got #{context.request.path}</span><span style="color:#d0d0d0">!</span><span style="color:#00c918">&quot;</span>
+<span style="color:#00c918">end</span>
+<span style="color:#00c918"></span>
+<span style="color:#00c918">puts &quot;</span>Listening on http<span style="color:#d0d0d0">://</span><span style="color:#fd8900">127.0.0.1</span><span style="color:#d0d0d0">:</span><span style="color:#fd8900">8080</span><span style="color:#00c918">&quot;</span>
+<span style="color:#00c918">server.listen(8080)</span>
+</pre>
+<pre style="color:#d9d8d8; background-color:#231f20; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#737171; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#98005d; font-weight:bold">require</span> <span style="color:#00853e">&quot;http/server&quot;</span>
+
+server <span style="color:#d9d8d8">=</span> HTTP<span style="color:#d9d8d8">::</span>Server<span style="color:#d9d8d8">.</span>new <span style="color:#98005d; font-weight:bold">do</span> |context|
+  context<span style="color:#d9d8d8">.</span>response<span style="color:#d9d8d8">.</span>content_type <span style="color:#d9d8d8">=</span> <span style="color:#00853e">&quot;text/plain&quot;</span>
+  context<span style="color:#d9d8d8">.</span>response<span style="color:#d9d8d8">.</span>print <span style="color:#00853e">&quot;Hello world, got #{context.request.path}</span><span style="color:#d9d8d8">!</span><span style="color:#00853e">&quot;</span>
+<span style="color:#00853e">end</span>
+<span style="color:#00853e"></span>
+<span style="color:#00853e">puts &quot;</span>Listening on http<span style="color:#d9d8d8">://</span><span style="color:#f386a1">127.0.0.1</span><span style="color:#d9d8d8">:</span><span style="color:#f386a1">8080</span><span style="color:#00853e">&quot;</span>
+<span style="color:#00853e">server.listen(8080)</span>
+</pre>
+<pre style="color:#6d828e; background-color:#e3efef; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#98afb5; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#b386b2; font-weight:bold">require</span> <span style="color:#87b386">&quot;http/server&quot;</span>
+
+server <span style="color:#6d828e">=</span> HTTP<span style="color:#6d828e">::</span>Server<span style="color:#6d828e">.</span>new <span style="color:#b386b2; font-weight:bold">do</span> |context|
+  context<span style="color:#6d828e">.</span>response<span style="color:#6d828e">.</span>content_type <span style="color:#6d828e">=</span> <span style="color:#87b386">&quot;text/plain&quot;</span>
+  context<span style="color:#6d828e">.</span>response<span style="color:#6d828e">.</span>print <span style="color:#87b386">&quot;Hello world, got #{context.request.path}</span><span style="color:#6d828e">!</span><span style="color:#87b386">&quot;</span>
+<span style="color:#87b386">end</span>
+<span style="color:#87b386"></span>
+<span style="color:#87b386">puts &quot;</span>Listening on http<span style="color:#6d828e">://</span><span style="color:#d8bba2">127.0.0.1</span><span style="color:#6d828e">:</span><span style="color:#d8bba2">8080</span><span style="color:#87b386">&quot;</span>
+<span style="color:#87b386">server.listen(8080)</span>
+</pre>
+<pre style="color:#a39e9b; background-color:#2f1e2e; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#776e71; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#815ba4; font-weight:bold">require</span> <span style="color:#48b685">&quot;http/server&quot;</span>
+
+server <span style="color:#a39e9b">=</span> HTTP<span style="color:#a39e9b">::</span>Server<span style="color:#a39e9b">.</span>new <span style="color:#815ba4; font-weight:bold">do</span> |context|
+  context<span style="color:#a39e9b">.</span>response<span style="color:#a39e9b">.</span>content_type <span style="color:#a39e9b">=</span> <span style="color:#48b685">&quot;text/plain&quot;</span>
+  context<span style="color:#a39e9b">.</span>response<span style="color:#a39e9b">.</span>print <span style="color:#48b685">&quot;Hello world, got #{context.request.path}</span><span style="color:#a39e9b">!</span><span style="color:#48b685">&quot;</span>
+<span style="color:#48b685">end</span>
+<span style="color:#48b685"></span>
+<span style="color:#48b685">puts &quot;</span>Listening on http<span style="color:#a39e9b">://</span><span style="color:#f99b15">127.0.0.1</span><span style="color:#a39e9b">:</span><span style="color:#f99b15">8080</span><span style="color:#48b685">&quot;</span>
+<span style="color:#48b685">server.listen(8080)</span>
+</pre>
+<pre style="color:#5f5e4e; background-color:#f4f3ec; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#878573; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#5f9182; font-weight:bold">require</span> <span style="color:#7d9726">&quot;http/server&quot;</span>
+
+server <span style="color:#5f5e4e">=</span> HTTP<span style="color:#5f5e4e">::</span>Server<span style="color:#5f5e4e">.</span>new <span style="color:#5f9182; font-weight:bold">do</span> |context|
+  context<span style="color:#5f5e4e">.</span>response<span style="color:#5f5e4e">.</span>content_type <span style="color:#5f5e4e">=</span> <span style="color:#7d9726">&quot;text/plain&quot;</span>
+  context<span style="color:#5f5e4e">.</span>response<span style="color:#5f5e4e">.</span>print <span style="color:#7d9726">&quot;Hello world, got #{context.request.path}</span><span style="color:#5f5e4e">!</span><span style="color:#7d9726">&quot;</span>
+<span style="color:#7d9726">end</span>
+<span style="color:#7d9726"></span>
+<span style="color:#7d9726">puts &quot;</span>Listening on http<span style="color:#5f5e4e">://</span><span style="color:#ae7313">127.0.0.1</span><span style="color:#5f5e4e">:</span><span style="color:#ae7313">8080</span><span style="color:#7d9726">&quot;</span>
+<span style="color:#7d9726">server.listen(8080)</span>
+</pre>
+<pre style="color:#8a8986; background-color:#28211c; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#666666; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#9b859d; font-weight:bold">require</span> <span style="color:#54be0d">&quot;http/server&quot;</span>
+
+server <span style="color:#8a8986">=</span> HTTP<span style="color:#8a8986">::</span>Server<span style="color:#8a8986">.</span>new <span style="color:#9b859d; font-weight:bold">do</span> |context|
+  context<span style="color:#8a8986">.</span>response<span style="color:#8a8986">.</span>content_type <span style="color:#8a8986">=</span> <span style="color:#54be0d">&quot;text/plain&quot;</span>
+  context<span style="color:#8a8986">.</span>response<span style="color:#8a8986">.</span>print <span style="color:#54be0d">&quot;Hello world, got #{context.request.path}</span><span style="color:#8a8986">!</span><span style="color:#54be0d">&quot;</span>
+<span style="color:#54be0d">end</span>
+<span style="color:#54be0d"></span>
+<span style="color:#54be0d">puts &quot;</span>Listening on http<span style="color:#8a8986">://</span><span style="color:#cf7d34">127.0.0.1</span><span style="color:#8a8986">:</span><span style="color:#cf7d34">8080</span><span style="color:#54be0d">&quot;</span>
+<span style="color:#54be0d">server.listen(8080)</span>
+</pre>
+<pre style="color:#303030; background-color:#f5f5f5; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#b0b0b0; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#aa759f; font-weight:bold">require</span> <span style="color:#90a959">&quot;http/server&quot;</span>
+
+server <span style="color:#303030">=</span> HTTP<span style="color:#303030">::</span>Server<span style="color:#303030">.</span>new <span style="color:#aa759f; font-weight:bold">do</span> |context|
+  context<span style="color:#303030">.</span>response<span style="color:#303030">.</span>content_type <span style="color:#303030">=</span> <span style="color:#90a959">&quot;text/plain&quot;</span>
+  context<span style="color:#303030">.</span>response<span style="color:#303030">.</span>print <span style="color:#90a959">&quot;Hello world, got #{context.request.path}</span><span style="color:#303030">!</span><span style="color:#90a959">&quot;</span>
+<span style="color:#90a959">end</span>
+<span style="color:#90a959"></span>
+<span style="color:#90a959">puts &quot;</span>Listening on http<span style="color:#303030">://</span><span style="color:#d28445">127.0.0.1</span><span style="color:#303030">:</span><span style="color:#d28445">8080</span><span style="color:#90a959">&quot;</span>
+<span style="color:#90a959">server.listen(8080)</span>
+</pre>
+<pre style="color:#81b5ac; background-color:#031a16; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#2b685e; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#4c963e; font-weight:bold">require</span> <span style="color:#883e96">&quot;http/server&quot;</span>
+
+server <span style="color:#81b5ac">=</span> HTTP<span style="color:#81b5ac">::</span>Server<span style="color:#81b5ac">.</span>new <span style="color:#4c963e; font-weight:bold">do</span> |context|
+  context<span style="color:#81b5ac">.</span>response<span style="color:#81b5ac">.</span>content_type <span style="color:#81b5ac">=</span> <span style="color:#883e96">&quot;text/plain&quot;</span>
+  context<span style="color:#81b5ac">.</span>response<span style="color:#81b5ac">.</span>print <span style="color:#883e96">&quot;Hello world, got #{context.request.path}</span><span style="color:#81b5ac">!</span><span style="color:#883e96">&quot;</span>
+<span style="color:#883e96">end</span>
+<span style="color:#883e96"></span>
+<span style="color:#883e96">puts &quot;</span>Listening on http<span style="color:#81b5ac">://</span><span style="color:#3e7996">127.0.0.1</span><span style="color:#81b5ac">:</span><span style="color:#3e7996">8080</span><span style="color:#883e96">&quot;</span>
+<span style="color:#883e96">server.listen(8080)</span>
+</pre>
+<pre style="color:#383a42; background-color:#fafafa; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#a0a1a7; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#a626a4; font-weight:bold">require</span> <span style="color:#50a14f">&quot;http/server&quot;</span>
+
+server <span style="color:#383a42">=</span> HTTP<span style="color:#383a42">::</span>Server<span style="color:#383a42">.</span>new <span style="color:#a626a4; font-weight:bold">do</span> |context|
+  context<span style="color:#383a42">.</span>response<span style="color:#383a42">.</span>content_type <span style="color:#383a42">=</span> <span style="color:#50a14f">&quot;text/plain&quot;</span>
+  context<span style="color:#383a42">.</span>response<span style="color:#383a42">.</span>print <span style="color:#50a14f">&quot;Hello world, got #{context.request.path}</span><span style="color:#383a42">!</span><span style="color:#50a14f">&quot;</span>
+<span style="color:#50a14f">end</span>
+<span style="color:#50a14f"></span>
+<span style="color:#50a14f">puts &quot;</span>Listening on http<span style="color:#383a42">://</span><span style="color:#d75f00">127.0.0.1</span><span style="color:#383a42">:</span><span style="color:#d75f00">8080</span><span style="color:#50a14f">&quot;</span>
+<span style="color:#50a14f">server.listen(8080)</span>
+</pre>
+<pre style="color:#464646; background-color:#f7f7f7; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#ababab; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#747474; font-weight:bold">require</span> <span style="color:#8e8e8e">&quot;http/server&quot;</span>
+
+server <span style="color:#464646">=</span> HTTP<span style="color:#464646">::</span>Server<span style="color:#464646">.</span>new <span style="color:#747474; font-weight:bold">do</span> |context|
+  context<span style="color:#464646">.</span>response<span style="color:#464646">.</span>content_type <span style="color:#464646">=</span> <span style="color:#8e8e8e">&quot;text/plain&quot;</span>
+  context<span style="color:#464646">.</span>response<span style="color:#464646">.</span>print <span style="color:#8e8e8e">&quot;Hello world, got #{context.request.path}</span><span style="color:#464646">!</span><span style="color:#8e8e8e">&quot;</span>
+<span style="color:#8e8e8e">end</span>
+<span style="color:#8e8e8e"></span>
+<span style="color:#8e8e8e">puts &quot;</span>Listening on http<span style="color:#464646">://</span><span style="color:#999999">127.0.0.1</span><span style="color:#464646">:</span><span style="color:#999999">8080</span><span style="color:#8e8e8e">&quot;</span>
+<span style="color:#8e8e8e">server.listen(8080)</span>
+</pre>
+<pre style="color:#d5c4a1; background-color:#32302f; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#665c54; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#d3869b; font-weight:bold">require</span> <span style="color:#b8bb26">&quot;http/server&quot;</span>
+
+server <span style="color:#d5c4a1">=</span> HTTP<span style="color:#d5c4a1">::</span>Server<span style="color:#d5c4a1">.</span>new <span style="color:#d3869b; font-weight:bold">do</span> |context|
+  context<span style="color:#d5c4a1">.</span>response<span style="color:#d5c4a1">.</span>content_type <span style="color:#d5c4a1">=</span> <span style="color:#b8bb26">&quot;text/plain&quot;</span>
+  context<span style="color:#d5c4a1">.</span>response<span style="color:#d5c4a1">.</span>print <span style="color:#b8bb26">&quot;Hello world, got #{context.request.path}</span><span style="color:#d5c4a1">!</span><span style="color:#b8bb26">&quot;</span>
+<span style="color:#b8bb26">end</span>
+<span style="color:#b8bb26"></span>
+<span style="color:#b8bb26">puts &quot;</span>Listening on http<span style="color:#d5c4a1">://</span><span style="color:#fe8019">127.0.0.1</span><span style="color:#d5c4a1">:</span><span style="color:#fe8019">8080</span><span style="color:#b8bb26">&quot;</span>
+<span style="color:#b8bb26">server.listen(8080)</span>
+</pre>
+<pre style="color:#a7a7a7; background-color:#191919; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#5f5a60; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#b888e2; font-weight:bold">require</span> <span style="color:#84b97c">&quot;http/server&quot;</span>
+
+server <span style="color:#a7a7a7">=</span> HTTP<span style="color:#a7a7a7">::</span>Server<span style="color:#a7a7a7">.</span>new <span style="color:#b888e2; font-weight:bold">do</span> |context|
+  context<span style="color:#a7a7a7">.</span>response<span style="color:#a7a7a7">.</span>content_type <span style="color:#a7a7a7">=</span> <span style="color:#84b97c">&quot;text/plain&quot;</span>
+  context<span style="color:#a7a7a7">.</span>response<span style="color:#a7a7a7">.</span>print <span style="color:#84b97c">&quot;Hello world, got #{context.request.path}</span><span style="color:#a7a7a7">!</span><span style="color:#84b97c">&quot;</span>
+<span style="color:#84b97c">end</span>
+<span style="color:#84b97c"></span>
+<span style="color:#84b97c">puts &quot;</span>Listening on http<span style="color:#a7a7a7">://</span><span style="color:#4bb1a7">127.0.0.1</span><span style="color:#a7a7a7">:</span><span style="color:#4bb1a7">8080</span><span style="color:#84b97c">&quot;</span>
+<span style="color:#84b97c">server.listen(8080)</span>
+</pre>
+<pre style="color:#5e6e5e; background-color:#f4fbf4; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#809980; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#ad2bee; font-weight:bold">require</span> <span style="color:#29a329">&quot;http/server&quot;</span>
+
+server <span style="color:#5e6e5e">=</span> HTTP<span style="color:#5e6e5e">::</span>Server<span style="color:#5e6e5e">.</span>new <span style="color:#ad2bee; font-weight:bold">do</span> |context|
+  context<span style="color:#5e6e5e">.</span>response<span style="color:#5e6e5e">.</span>content_type <span style="color:#5e6e5e">=</span> <span style="color:#29a329">&quot;text/plain&quot;</span>
+  context<span style="color:#5e6e5e">.</span>response<span style="color:#5e6e5e">.</span>print <span style="color:#29a329">&quot;Hello world, got #{context.request.path}</span><span style="color:#5e6e5e">!</span><span style="color:#29a329">&quot;</span>
+<span style="color:#29a329">end</span>
+<span style="color:#29a329"></span>
+<span style="color:#29a329">puts &quot;</span>Listening on http<span style="color:#5e6e5e">://</span><span style="color:#87711d">127.0.0.1</span><span style="color:#5e6e5e">:</span><span style="color:#87711d">8080</span><span style="color:#29a329">&quot;</span>
+<span style="color:#29a329">server.listen(8080)</span>
+</pre>
+<pre style="color:#d0d0d0; background-color:#151515; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#505050; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#e1a3ee; font-weight:bold">require</span> <span style="color:#acc267">&quot;http/server&quot;</span>
+
+server <span style="color:#d0d0d0">=</span> HTTP<span style="color:#d0d0d0">::</span>Server<span style="color:#d0d0d0">.</span>new <span style="color:#e1a3ee; font-weight:bold">do</span> |context|
+  context<span style="color:#d0d0d0">.</span>response<span style="color:#d0d0d0">.</span>content_type <span style="color:#d0d0d0">=</span> <span style="color:#acc267">&quot;text/plain&quot;</span>
+  context<span style="color:#d0d0d0">.</span>response<span style="color:#d0d0d0">.</span>print <span style="color:#acc267">&quot;Hello world, got #{context.request.path}</span><span style="color:#d0d0d0">!</span><span style="color:#acc267">&quot;</span>
+<span style="color:#acc267">end</span>
+<span style="color:#acc267"></span>
+<span style="color:#acc267">puts &quot;</span>Listening on http<span style="color:#d0d0d0">://</span><span style="color:#eda987">127.0.0.1</span><span style="color:#d0d0d0">:</span><span style="color:#eda987">8080</span><span style="color:#acc267">&quot;</span>
+<span style="color:#acc267">server.listen(8080)</span>
+</pre>
+<pre style="color:#d0d0d0; background-color:#000000; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#505050; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#b31e8d; font-weight:bold">require</span> <span style="color:#37b349">&quot;http/server&quot;</span>
+
+server <span style="color:#d0d0d0">=</span> HTTP<span style="color:#d0d0d0">::</span>Server<span style="color:#d0d0d0">.</span>new <span style="color:#b31e8d; font-weight:bold">do</span> |context|
+  context<span style="color:#d0d0d0">.</span>response<span style="color:#d0d0d0">.</span>content_type <span style="color:#d0d0d0">=</span> <span style="color:#37b349">&quot;text/plain&quot;</span>
+  context<span style="color:#d0d0d0">.</span>response<span style="color:#d0d0d0">.</span>print <span style="color:#37b349">&quot;Hello world, got #{context.request.path}</span><span style="color:#d0d0d0">!</span><span style="color:#37b349">&quot;</span>
+<span style="color:#37b349">end</span>
+<span style="color:#37b349"></span>
+<span style="color:#37b349">puts &quot;</span>Listening on http<span style="color:#d0d0d0">://</span><span style="color:#f29333">127.0.0.1</span><span style="color:#d0d0d0">:</span><span style="color:#f29333">8080</span><span style="color:#37b349">&quot;</span>
+<span style="color:#37b349">server.listen(8080)</span>
+</pre>
+<pre style="color:#6c696e; background-color:#ffffff; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#a7a5a8; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#aa17e6; font-weight:bold">require</span> <span style="color:#17ad98">&quot;http/server&quot;</span>
+
+server <span style="color:#6c696e">=</span> HTTP<span style="color:#6c696e">::</span>Server<span style="color:#6c696e">.</span>new <span style="color:#aa17e6; font-weight:bold">do</span> |context|
+  context<span style="color:#6c696e">.</span>response<span style="color:#6c696e">.</span>content_type <span style="color:#6c696e">=</span> <span style="color:#17ad98">&quot;text/plain&quot;</span>
+  context<span style="color:#6c696e">.</span>response<span style="color:#6c696e">.</span>print <span style="color:#17ad98">&quot;Hello world, got #{context.request.path}</span><span style="color:#6c696e">!</span><span style="color:#17ad98">&quot;</span>
+<span style="color:#17ad98">end</span>
+<span style="color:#17ad98"></span>
+<span style="color:#17ad98">puts &quot;</span>Listening on http<span style="color:#6c696e">://</span><span style="color:#d65407">127.0.0.1</span><span style="color:#6c696e">:</span><span style="color:#d65407">8080</span><span style="color:#17ad98">&quot;</span>
+<span style="color:#17ad98">server.listen(8080)</span>
+</pre>
+<pre style="color:#a89984; background-color:#1d2021; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#665c54; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#8f4673; font-weight:bold">require</span> <span style="color:#95c085">&quot;http/server&quot;</span>
+
+server <span style="color:#a89984">=</span> HTTP<span style="color:#a89984">::</span>Server<span style="color:#a89984">.</span>new <span style="color:#8f4673; font-weight:bold">do</span> |context|
+  context<span style="color:#a89984">.</span>response<span style="color:#a89984">.</span>content_type <span style="color:#a89984">=</span> <span style="color:#95c085">&quot;text/plain&quot;</span>
+  context<span style="color:#a89984">.</span>response<span style="color:#a89984">.</span>print <span style="color:#95c085">&quot;Hello world, got #{context.request.path}</span><span style="color:#a89984">!</span><span style="color:#95c085">&quot;</span>
+<span style="color:#95c085">end</span>
+<span style="color:#95c085"></span>
+<span style="color:#95c085">puts &quot;</span>Listening on http<span style="color:#a89984">://</span><span style="color:#fe8625">127.0.0.1</span><span style="color:#a89984">:</span><span style="color:#fe8625">8080</span><span style="color:#95c085">&quot;</span>
+<span style="color:#95c085">server.listen(8080)</span>
+</pre>
+<pre style="color:#c0c5ce; background-color:#1b2b34; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#65737e; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#c594c5; font-weight:bold">require</span> <span style="color:#99c794">&quot;http/server&quot;</span>
+
+server <span style="color:#c0c5ce">=</span> HTTP<span style="color:#c0c5ce">::</span>Server<span style="color:#c0c5ce">.</span>new <span style="color:#c594c5; font-weight:bold">do</span> |context|
+  context<span style="color:#c0c5ce">.</span>response<span style="color:#c0c5ce">.</span>content_type <span style="color:#c0c5ce">=</span> <span style="color:#99c794">&quot;text/plain&quot;</span>
+  context<span style="color:#c0c5ce">.</span>response<span style="color:#c0c5ce">.</span>print <span style="color:#99c794">&quot;Hello world, got #{context.request.path}</span><span style="color:#c0c5ce">!</span><span style="color:#99c794">&quot;</span>
+<span style="color:#99c794">end</span>
+<span style="color:#99c794"></span>
+<span style="color:#99c794">puts &quot;</span>Listening on http<span style="color:#c0c5ce">://</span><span style="color:#f99157">127.0.0.1</span><span style="color:#c0c5ce">:</span><span style="color:#f99157">8080</span><span style="color:#99c794">&quot;</span>
+<span style="color:#99c794">server.listen(8080)</span>
+</pre>
+<pre style="color:#405c79; background-color:#f7f9fb; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#aabcce; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#bf568b; font-weight:bold">require</span> <span style="color:#56bf8b">&quot;http/server&quot;</span>
+
+server <span style="color:#405c79">=</span> HTTP<span style="color:#405c79">::</span>Server<span style="color:#405c79">.</span>new <span style="color:#bf568b; font-weight:bold">do</span> |context|
+  context<span style="color:#405c79">.</span>response<span style="color:#405c79">.</span>content_type <span style="color:#405c79">=</span> <span style="color:#56bf8b">&quot;text/plain&quot;</span>
+  context<span style="color:#405c79">.</span>response<span style="color:#405c79">.</span>print <span style="color:#56bf8b">&quot;Hello world, got #{context.request.path}</span><span style="color:#405c79">!</span><span style="color:#56bf8b">&quot;</span>
+<span style="color:#56bf8b">end</span>
+<span style="color:#56bf8b"></span>
+<span style="color:#56bf8b">puts &quot;</span>Listening on http<span style="color:#405c79">://</span><span style="color:#bfbf56">127.0.0.1</span><span style="color:#405c79">:</span><span style="color:#bfbf56">8080</span><span style="color:#56bf8b">&quot;</span>
+<span style="color:#56bf8b">server.listen(8080)</span>
+</pre>
+<pre style="color:#959dcb; background-color:#292d3e; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#676e95; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#c792ea; font-weight:bold">require</span> <span style="color:#c3e88d">&quot;http/server&quot;</span>
+
+server <span style="color:#959dcb">=</span> HTTP<span style="color:#959dcb">::</span>Server<span style="color:#959dcb">.</span>new <span style="color:#c792ea; font-weight:bold">do</span> |context|
+  context<span style="color:#959dcb">.</span>response<span style="color:#959dcb">.</span>content_type <span style="color:#959dcb">=</span> <span style="color:#c3e88d">&quot;text/plain&quot;</span>
+  context<span style="color:#959dcb">.</span>response<span style="color:#959dcb">.</span>print <span style="color:#c3e88d">&quot;Hello world, got #{context.request.path}</span><span style="color:#959dcb">!</span><span style="color:#c3e88d">&quot;</span>
+<span style="color:#c3e88d">end</span>
+<span style="color:#c3e88d"></span>
+<span style="color:#c3e88d">puts &quot;</span>Listening on http<span style="color:#959dcb">://</span><span style="color:#f78c6c">127.0.0.1</span><span style="color:#959dcb">:</span><span style="color:#f78c6c">8080</span><span style="color:#c3e88d">&quot;</span>
+<span style="color:#c3e88d">server.listen(8080)</span>
+</pre>
+<pre style="color:#504945; background-color:#fbf1c7; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#bdae93; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#8f3f71; font-weight:bold">require</span> <span style="color:#79740e">&quot;http/server&quot;</span>
+
+server <span style="color:#504945">=</span> HTTP<span style="color:#504945">::</span>Server<span style="color:#504945">.</span>new <span style="color:#8f3f71; font-weight:bold">do</span> |context|
+  context<span style="color:#504945">.</span>response<span style="color:#504945">.</span>content_type <span style="color:#504945">=</span> <span style="color:#79740e">&quot;text/plain&quot;</span>
+  context<span style="color:#504945">.</span>response<span style="color:#504945">.</span>print <span style="color:#79740e">&quot;Hello world, got #{context.request.path}</span><span style="color:#504945">!</span><span style="color:#79740e">&quot;</span>
+<span style="color:#79740e">end</span>
+<span style="color:#79740e"></span>
+<span style="color:#79740e">puts &quot;</span>Listening on http<span style="color:#504945">://</span><span style="color:#af3a03">127.0.0.1</span><span style="color:#504945">:</span><span style="color:#af3a03">8080</span><span style="color:#79740e">&quot;</span>
+<span style="color:#79740e">server.listen(8080)</span>
+</pre>
+<pre style="color:#68615e; background-color:#f1efee; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#9c9491; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#6666ea; font-weight:bold">require</span> <span style="color:#7b9726">&quot;http/server&quot;</span>
+
+server <span style="color:#68615e">=</span> HTTP<span style="color:#68615e">::</span>Server<span style="color:#68615e">.</span>new <span style="color:#6666ea; font-weight:bold">do</span> |context|
+  context<span style="color:#68615e">.</span>response<span style="color:#68615e">.</span>content_type <span style="color:#68615e">=</span> <span style="color:#7b9726">&quot;text/plain&quot;</span>
+  context<span style="color:#68615e">.</span>response<span style="color:#68615e">.</span>print <span style="color:#7b9726">&quot;Hello world, got #{context.request.path}</span><span style="color:#68615e">!</span><span style="color:#7b9726">&quot;</span>
+<span style="color:#7b9726">end</span>
+<span style="color:#7b9726"></span>
+<span style="color:#7b9726">puts &quot;</span>Listening on http<span style="color:#68615e">://</span><span style="color:#df5320">127.0.0.1</span><span style="color:#68615e">:</span><span style="color:#df5320">8080</span><span style="color:#7b9726">&quot;</span>
+<span style="color:#7b9726">server.listen(8080)</span>
+</pre>
+<pre style="color:#cbd6e2; background-color:#0b1c2c; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#627e99; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#bf568b; font-weight:bold">require</span> <span style="color:#56bf8b">&quot;http/server&quot;</span>
+
+server <span style="color:#cbd6e2">=</span> HTTP<span style="color:#cbd6e2">::</span>Server<span style="color:#cbd6e2">.</span>new <span style="color:#bf568b; font-weight:bold">do</span> |context|
+  context<span style="color:#cbd6e2">.</span>response<span style="color:#cbd6e2">.</span>content_type <span style="color:#cbd6e2">=</span> <span style="color:#56bf8b">&quot;text/plain&quot;</span>
+  context<span style="color:#cbd6e2">.</span>response<span style="color:#cbd6e2">.</span>print <span style="color:#56bf8b">&quot;Hello world, got #{context.request.path}</span><span style="color:#cbd6e2">!</span><span style="color:#56bf8b">&quot;</span>
+<span style="color:#56bf8b">end</span>
+<span style="color:#56bf8b"></span>
+<span style="color:#56bf8b">puts &quot;</span>Listening on http<span style="color:#cbd6e2">://</span><span style="color:#bfbf56">127.0.0.1</span><span style="color:#cbd6e2">:</span><span style="color:#bfbf56">8080</span><span style="color:#56bf8b">&quot;</span>
+<span style="color:#56bf8b">server.listen(8080)</span>
+</pre>
+<pre style="color:#101010; background-color:#ffffff; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#b0b0b0; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#ad00a1; font-weight:bold">require</span> <span style="color:#00c918">&quot;http/server&quot;</span>
+
+server <span style="color:#101010">=</span> HTTP<span style="color:#101010">::</span>Server<span style="color:#101010">.</span>new <span style="color:#ad00a1; font-weight:bold">do</span> |context|
+  context<span style="color:#101010">.</span>response<span style="color:#101010">.</span>content_type <span style="color:#101010">=</span> <span style="color:#00c918">&quot;text/plain&quot;</span>
+  context<span style="color:#101010">.</span>response<span style="color:#101010">.</span>print <span style="color:#00c918">&quot;Hello world, got #{context.request.path}</span><span style="color:#101010">!</span><span style="color:#00c918">&quot;</span>
+<span style="color:#00c918">end</span>
+<span style="color:#00c918"></span>
+<span style="color:#00c918">puts &quot;</span>Listening on http<span style="color:#101010">://</span><span style="color:#fd8900">127.0.0.1</span><span style="color:#101010">:</span><span style="color:#fd8900">8080</span><span style="color:#00c918">&quot;</span>
+<span style="color:#00c918">server.listen(8080)</span>
+</pre>
+<pre style="color:#6e6b5e; background-color:#fefbec; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#999580; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#b854d4; font-weight:bold">require</span> <span style="color:#60ac39">&quot;http/server&quot;</span>
+
+server <span style="color:#6e6b5e">=</span> HTTP<span style="color:#6e6b5e">::</span>Server<span style="color:#6e6b5e">.</span>new <span style="color:#b854d4; font-weight:bold">do</span> |context|
+  context<span style="color:#6e6b5e">.</span>response<span style="color:#6e6b5e">.</span>content_type <span style="color:#6e6b5e">=</span> <span style="color:#60ac39">&quot;text/plain&quot;</span>
+  context<span style="color:#6e6b5e">.</span>response<span style="color:#6e6b5e">.</span>print <span style="color:#60ac39">&quot;Hello world, got #{context.request.path}</span><span style="color:#6e6b5e">!</span><span style="color:#60ac39">&quot;</span>
+<span style="color:#60ac39">end</span>
+<span style="color:#60ac39"></span>
+<span style="color:#60ac39">puts &quot;</span>Listening on http<span style="color:#6e6b5e">://</span><span style="color:#b65611">127.0.0.1</span><span style="color:#6e6b5e">:</span><span style="color:#b65611">8080</span><span style="color:#60ac39">&quot;</span>
+<span style="color:#60ac39">server.listen(8080)</span>
+</pre>
+<pre style="color:#87928a; background-color:#171c19; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#5f6d64; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#55859b; font-weight:bold">require</span> <span style="color:#489963">&quot;http/server&quot;</span>
+
+server <span style="color:#87928a">=</span> HTTP<span style="color:#87928a">::</span>Server<span style="color:#87928a">.</span>new <span style="color:#55859b; font-weight:bold">do</span> |context|
+  context<span style="color:#87928a">.</span>response<span style="color:#87928a">.</span>content_type <span style="color:#87928a">=</span> <span style="color:#489963">&quot;text/plain&quot;</span>
+  context<span style="color:#87928a">.</span>response<span style="color:#87928a">.</span>print <span style="color:#489963">&quot;Hello world, got #{context.request.path}</span><span style="color:#87928a">!</span><span style="color:#489963">&quot;</span>
+<span style="color:#489963">end</span>
+<span style="color:#489963"></span>
+<span style="color:#489963">puts &quot;</span>Listening on http<span style="color:#87928a">://</span><span style="color:#9f713c">127.0.0.1</span><span style="color:#87928a">:</span><span style="color:#9f713c">8080</span><span style="color:#489963">&quot;</span>
+<span style="color:#489963">server.listen(8080)</span>
+</pre>
+<pre style="color:#4d4d4c; background-color:#ffffff; font-size:10pt; font-family:'Courier New',monospace;white-space: pre-wrap;"><span style="color:#8e908c; font-style:italic"># A very basic HTTP server</span>
+<span style="color:#8959a8; font-weight:bold">require</span> <span style="color:#718c00">&quot;http/server&quot;</span>
+
+server <span style="color:#4d4d4c">=</span> HTTP<span style="color:#4d4d4c">::</span>Server<span style="color:#4d4d4c">.</span>new <span style="color:#8959a8; font-weight:bold">do</span> |context|
+  context<span style="color:#4d4d4c">.</span>response<span style="color:#4d4d4c">.</span>content_type <span style="color:#4d4d4c">=</span> <span style="color:#718c00">&quot;text/plain&quot;</span>
+  context<span style="color:#4d4d4c">.</span>response<span style="color:#4d4d4c">.</span>print <span style="color:#718c00">&quot;Hello world, got #{context.request.path}</span><span style="color:#4d4d4c">!</span><span style="color:#718c00">&quot;</span>
+<span style="color:#718c00">end</span>
+<span style="color:#718c00"></span>
+<span style="color:#718c00">puts &quot;</span>Listening on http<span style="color:#4d4d4c">://</span><span style="color:#f5871f">127.0.0.1</span><span style="color:#4d4d4c">:</span><span style="color:#f5871f">8080</span><span style="color:#718c00">&quot;</span>
+<span style="color:#718c00">server.listen(8080)</span>
+</pre>
