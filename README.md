@@ -32,7 +32,7 @@ require "syntaxer"
 #### Options
 
 ```crystal
-def self.highlight(code : String, lang : String, theme : String = "default.css", format : String = "html")
+def self.highlight(code : String, lang : String, theme : String = "default.css", format : String = "html", params : Array(String) = [] of String)
 ```
 
 #### Example
@@ -44,10 +44,6 @@ Syntaxer::SourceHighlight.highlight(code: "print 'hello world'", lang: "python")
 **Output**
 
 ```html
-<!-- Generator: GNU source-highlight 3.1.9
-by Lorenzo Bettini
-http://www.lorenzobettini.it
-http://www.gnu.org/software/src-highlite -->
 <pre><tt><font color="#ffff60">print</font><font color="#C7C7C7"> </font><font color="#ffa0a0">'hello world'</font></tt></pre>
 ```
 
@@ -56,7 +52,7 @@ http://www.gnu.org/software/src-highlite -->
 #### Options
 
 ```crystal
-def self.highlight(code : String, lang : String, theme : String = "base16/monokai", inline_style : Bool = true, format : String = "html", wrap : Bool = true)
+def self.highlight(code : String, lang : String, theme : String = "base16/monokai", inline_style : Bool = true, format : String = "html", wrap : Bool = true, params : Array(String) = [] of String)
 ```
 
 #### Example
